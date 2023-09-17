@@ -1,0 +1,17 @@
+.color {
+  background-color: var(--bluelight) !important;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  margin-right: auto;
+}
+
+.value {
+  font-size: 64px;
+  font-weight: 400;
+  line-height: normal;
+}

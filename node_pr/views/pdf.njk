@@ -1,0 +1,18 @@
+{% extends "_layout.njk" %}
+
+{% block style %}
+
+<link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css">
+<link rel="stylesheet" href="/bundle.css" />
+{% endblock %}
+
+{% block content %}
+
+  <div id="main">
+    <div class="uk-card uk-card-default uk-card-body">
+      <h1 class="uk-margin-top uk-margin-bottom">{{ title }}</h1>
+      {{ html | safe }}
+    </div>
+  </div>
+
+{% endblock %}

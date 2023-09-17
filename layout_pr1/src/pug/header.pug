@@ -1,0 +1,44 @@
+-var hmenus = [{item: 'О нас', url: '#about'}, {item: 'Галерея', url: '#gallery'}, {item: 'Каталог', url: '#catalog'}, {item: 'События', url: '#events'}, {item: 'Проекты', url: '#projects'}, {item: 'Контакты', url: '#contacts'}]
+.top-wrapper
+  header.top-wrapper__header.header
+    .header__burger.burger
+      input.burger__input(type="checkbox")
+      span
+      span
+      span
+    .header__menu-mobile.mobile-menu
+      ul.mobile-menu__menu-list
+        each hmenu in hmenus
+          li.mobile-menu__menu-item
+            a.mobile-menu__menu-link(href=hmenu.url) #{hmenu.item}
+      .mobile-menu__enter
+        a.mobile-menu__enter-link(href="./" aria-label="Войти")
+          svg.mobile-menu__enter-icon(width="13" height="13")
+            use(xlink:href="symbol/svg/sprite.symbol.svg#svg--enter")
+          span.mobile-menu__enter-text Войти
+    button.header__search-open(type="button")
+      svg.header__search-icon-open
+        use(xlink:href="symbol/svg/sprite.symbol.svg#svg--search")
+    form.search-mobile
+      button.search-mobile__submit(type="submit")
+        svg.search-mobile__icon-submit
+          use(xlink:href="symbol/svg/sprite.symbol.svg#svg--search")
+      input.search-mobile__input(type="text")
+      button.search-mobile__close(type="button")
+        svg.search-mobile__icon-close
+          use(xlink:href="symbol/svg/sprite.symbol.svg#svg--search-close")
+    include main-menu.pug
+    include drop-menu.pug
+  section.top-wrapper__text-section
+    .top-wrapper__text-cont.container
+      .top-wrapper__text-content.container
+        h1.top-wrapper__text-title Прикоснитесь к прекрасному
+        p.top-wrapper__text-desc Мы вынуждены отталкиваться от того, что реализация намеченных плановых заданий создаёт предпосылки для новых предложений
+        button.top-wrapper__text-btn.btn-inner(type="button" aria-label="Подписаться на рассылку")
+          span Подписаться на рассылку
+  .top-wrapper__banners.slider-wrapper
+    .top-wrapper__banners-swiper.swiper-container
+      .top-wrapper__banners-list.swiper-wrapper
+        .top-wrapper__banner-slide.swiper-slide(id="banner-1")
+        .top-wrapper__banner-slide.swiper-slide(id="banner-2")
+        .top-wrapper__banner-slide.swiper-slide(id="banner-3")

@@ -1,0 +1,71 @@
+.menu {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 0 0 0 auto;
+}
+
+.menuButton {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 31px;
+}
+
+.menuButton:active {
+  background-color: var(--greyF4);
+}
+
+.dropdown {
+  position: absolute;
+  right: -66.5px;
+  top: -3px;
+  border: 1px solid var(--greyC4);
+  background-color: var(--white);
+  z-index: 100;
+}
+
+.dropdown::after {
+  position: absolute;
+  left: calc(50% - 7px);
+  top: -13px;
+  content: url('./img/nemu_up.svg');
+  width: 15px;
+  height: 8px;
+}
+
+.menuItemsList {
+  padding: 6px 0;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  padding: 9px 14px;
+  cursor: pointer;
+}
+
+.menuItem:hover,
+.menuItem:focus {
+  background-color: var(--greyF4);
+}
+
+.menuNotItem {
+  cursor: default;
+}
+
+.menuItem.menuNotItem:hover,
+.menuItem.menuNotItem:focus {
+  background: none;
+}
+
+.menuItem:not(:last-child) {
+  padding-bottom: 15px;
+}
+
+.menuItem > svg + span {
+  margin-left: 8px;
+}
+

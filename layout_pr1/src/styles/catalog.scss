@@ -1,0 +1,336 @@
+@import '_variabels.scss';
+@import '_mixin.scss';
+
+.catalog {
+  padding-top: 80px;
+  padding-bottom: 40px;
+  &__title {
+    margin-bottom: 17px;
+  }
+  &__desc {
+    margin-bottom: 38px;
+    max-width: 1080px;
+    line-height: 32px;
+  }
+  &__colums {
+    display: flex;
+  }
+  &__tabs {
+    flex: 1 1 48.5%;
+    width: 48.5%;
+    margin-right: 50px;
+  }
+  &__accordion {
+    flex: 1 1 51.5%;
+    width: 51.5%;
+  }
+  &__acc-box {
+    justify-content: space-between;
+    border-top: 1px solid $greyEC;
+    transition: border-color 0.5s;
+    &:last-child {
+      border-bottom: 1px solid $greyEC;
+    }
+    &:hover,
+    &:focus-within,
+    &:hover + .catalog__acc-box ,
+    &:focus-within + .catalog__acc-box  {
+      border-top: 1px solid $violet1;
+    }
+    &:last-child:hover,
+    &:focus-within:last-child {
+      border-bottom: 1px solid $violet1;
+    }
+  }
+
+  &__acc-item {
+    display: flex;
+    align-items: center;
+    height: 114px;
+    outline: none;
+    cursor: pointer;
+    &:hover .catalog__acc-item-title {
+      color: $violet1;
+      background-color: transparent;
+    }
+    &:focus .catalog__acc-item-title {
+      color: $white;
+      background-color: $violet1;
+    }
+    &:active .catalog__acc-item-title {
+      color: $violet0;
+      background-color: transparent;
+    }
+    &:hover .catalog__acc-item-icon {
+      --arrow-bg: #D1A9F0;
+      --arrow-bor: #D1A9F0;
+      --arrow-arr: #000;
+    }
+    &:focus .catalog__acc-item-icon {
+      --arrow-bg: #ECECEC;
+      --arrow-bor: #9D5CD0;
+      --arrow-arr: #000;
+    }
+    &:active .catalog__acc-item-icon {
+      --arrow-bg: #D1A9F0;
+      --arrow-bor: #9D5CD0;
+      --arrow-arr: #000;
+    }
+    &.ui-accordion-header-active .catalog__acc-item-title {
+      color: $violet1 !important;
+      background-color: transparent !important;
+    }
+  }
+  .ui-state-active .catalog__acc-item-icon  {
+    --arrow-bg: #D1A9F0;
+    --arrow-bor: #9D5CD0;
+    --arrow-arr: #000;
+    transform: rotate(-180deg);
+  }
+  &__acc-item-title {
+    font-size: 24px;
+    font-weight: 600;
+    transition: border-color 0.5s, color 0.5s;
+  }
+  &__acc-item-icon {
+    height: 50px;
+    width: 50px;
+    margin-left: auto;
+    padding: 0;
+    border: none;
+    background: none;
+    outline: none;
+    --arrow-bg: #ECECEC;
+    --arrow-bor: #ECECEC;
+    --arrow-arr: #000;
+    transition: transform 0.5s, fill 0.5s, stroke 0.5s;
+  }
+  &__acc-open-text {
+    padding: 32px 0 25px 0;
+    border-top: 1px solid $violet1;
+  }
+  &__acc-not-info {
+    display: flex;
+    align-items: center;
+  }
+  &__acc-not-info-border {
+    margin-right: 24px;
+    border: 2px solid $grey99;
+  }
+  &__acc-not-info-img {
+    height: 165px;
+    width: 251px;
+    margin: 12px;
+    background-color: $grey99;
+  }
+  &__acc-not-info-title {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  &__acc-not-info-desc {
+    line-height: 22px;
+    max-width: 275px;
+  }
+}
+
+.greed-acc {
+  @include clearListStyles;
+  column-width: 0.3vw;
+  column-count: 3;
+  column-gap: 0%;
+  &__open-btn-box {
+    display: block;
+    margin-bottom: 9.75px;
+    color: $black33;
+    text-decoration: none;
+  }
+  &__open-btn {
+    display: inline-block;
+    padding-bottom: 3px;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.5s, background-color 0.5s;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    &:hover {
+      border-bottom: 1px solid $violet1;
+      background-color: transparent;
+    }
+    &:focus {
+      border-bottom: 1px solid transparent;
+      background-color: $violet1;
+    }
+    &:active {
+      border-bottom: 1px solid transparent !important;
+      background-color: transparent !important;
+    }
+  }
+  &__active-btn {
+    border-bottom: 1px solid $violet1 !important;
+    background-color: transparent !important;
+    cursor: default;
+  }
+}
+
+.painter-tabs {
+  &__list {
+    @include clearListStyles;
+  }
+  &__item {
+    display: none;
+  }
+  &__avtive {
+    display: block;
+    animation-name: fadeBox;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-timing-function: cubic-bezier(0.77,0.2,0.05,1.0),
+  }
+  &__img {
+    width: 100%;
+    margin-bottom: 28px;
+  }
+  &__title {
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  &__data {
+    margin-bottom: 15px;
+    font-size: 12px;
+    color: $grey99;
+  }
+  &__desc {
+    line-height: 32px;
+  }
+}
+
+@keyframes fadeBox {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1024px) {
+  .catalog {
+    &__tabs {
+      flex: 1 1 50%;
+      width: 50%;
+    }
+    &__accordion {
+      flex: 1 1 50%;
+      width: 50%;
+    }
+    &__acc-not-info-img {
+      height: 114px;
+      width: 173px;
+    }
+    &__acc-open-text {
+      padding-bottom: 15px;
+    }
+  }
+  .greed-acc {
+    column-width: 0.48vw;
+    column-count: 2;
+    column-gap: 4%;
+  }
+}
+@media (max-width: 768px) {
+  .catalog {
+    padding-bottom: 38px;
+    &__colums {
+      flex-direction: column-reverse;
+    }
+    &__tabs {
+      flex: 1 1 100%;
+      width: 100%;
+    }
+    &__accordion {
+      flex: 1 1 100%;
+      width: 100%;
+      margin-bottom: 50px;
+    }
+    &__desc {
+      margin-bottom: 18px;
+    }
+    &__acc-not-info-img {
+      height: 165px;
+      width: 251px;
+    }
+    &__acc-open-text {
+      padding-bottom: 28px;
+    }
+  }
+  .greed-acc {
+    column-width: 0.3vw;
+    column-count: 3;
+    column-gap: 5%;
+  }
+  .painter-tabs {
+    &__img {
+      margin-bottom: 21px;
+    }
+    &__title {
+      margin-bottom: 10px;
+    }
+    &__data {
+      margin-bottom: 10px;
+    }
+  }
+}
+@media (max-width: 580px) {
+  .catalog {
+    padding-top: 38px;
+    padding-bottom: 14px;
+    &__title {
+      margin-bottom: -2px;
+    }
+    &__desc {
+      display: none;
+    }
+    &__acc-item {
+      height: 72px;
+    }
+    &__acc-item-title {
+      font-size: 18px;
+    }
+    &__acc-open-text {
+      padding-top: 26px;
+      padding-bottom: 16px;
+    }
+    &__acc-item-icon {
+      height: 30px;
+      width: 30px;
+    }
+    &__acc-not-info-img {
+      height: 118px;
+      width: 79px;
+    }
+    &__acc-not-info-title {
+      font-size: 18px;
+    }
+  }
+  .greed-acc {
+    column-width: 1vw;
+    column-count: 1;
+    column-gap: 0;
+    &__open-btn-box {
+      margin-bottom: 9.5px;
+      font-size: 16px;
+    }
+  }
+  .painter-tabs {
+    &__data {
+      margin-bottom: 13px;
+    }
+    &__desc {
+      font-size: 16px;
+    }
+  }
+}

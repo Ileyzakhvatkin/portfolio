@@ -1,0 +1,117 @@
+@import '_variabels.scss';
+@import '_mixin.scss';
+
+.partners {
+  padding-bottom: 81px;
+  &__title {
+    margin-bottom: 25px;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  &__swiper-box {
+    display: flex;
+    align-items: center;
+  }
+  &__swiper {
+    margin: 0 45px
+  }
+  &__list {
+    @include clearListStyles;
+    display: flex;
+    align-items: center;
+    margin: 0 1px;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    padding: 10px 20px;
+    border: 1px solid $greyCA;
+    transition: border-color 0.5s;
+    &:focus,
+    &:active {
+      border-color: $violet1;
+    }
+    &:hover .partners__item-img {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+    &:active .partners__item-img {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+  }
+  &__item-img {
+    max-width: 100%;
+    max-height: 100%;
+    filter: grayscale(100%);
+    opacity: 0.5;
+    cursor: pointer;
+    transition: filter 0.5s, opacity 0.5s;
+  }
+  &__button-prev {
+    flex: 1 1 30px;
+    display: block;
+    transform: rotate(90deg);
+    z-index: 1000;
+  }
+  &__button-next {
+    flex: 1 1 30px;
+    display: block;
+    transform: rotate(-90deg);
+    z-index: 1000;
+  }
+}
+
+@media (max-width: 1024px) {
+  .partners {
+    &__title {
+      margin-left: 0;
+      margin-bottom: 25px;
+    }
+    &__swiper {
+      margin: 0 21px
+    }
+    &__list {
+      margin: 0;
+    }
+    &__item {
+      height: 128px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .partners {
+    &__title {
+      margin-bottom: 30px;
+    }
+    &__swiper {
+      margin: 0 23px
+    }
+    &__item {
+      height: 106px;
+    }
+  }
+  .painter-tabs {
+    &__img {
+      margin-bottom: 20px;
+    }
+  }
+}
+@media (max-width: 580px) {
+  .partners {
+    padding-bottom: 30px;
+    &__title {
+      margin-bottom: 17px;
+      font-size: 18.5px;
+    }
+    &__item {
+      height: 65px;
+    }
+    &__swiper {
+      margin: 0 16px
+    }
+  }
+}

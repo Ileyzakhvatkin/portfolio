@@ -1,0 +1,26 @@
+.task {
+  display: flex;
+  align-items: center;
+  min-width: 370px;
+  border-top: 1px solid var(--greyE4);
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.task:last-child {
+  border-bottom: 1px solid var(--greyE4);
+}
+
+.taskTomatos {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  border: 1px solid var(--greyC4);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 25px;
+}
+
+.taskTitle {
+  margin-right: auto;
+}

@@ -1,0 +1,129 @@
+@import '_variabels.scss';
+@import '_mixin.scss';
+
+.footer {
+  background-color: $greyBg;
+  &__main {
+    background-color: $greyLight;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  &__logo-box {
+    margin-right: 19.5%;
+    & .main-logo {
+      display: block;
+      margin-bottom: 22px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__logo-link {
+    display: block;
+    margin-right: auto;
+    margin-bottom: 31px;
+    transition: opacity 0.5s cubic-bezier(0,.42,.16,.97);
+    &:hover {
+      opacity: 0.75;
+    }
+    &:focus {
+      opacity: 0.75;
+    }
+    &:active {
+      opacity: 0.5;
+    }
+  }
+  &__menus {
+    @include clearListStyles;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  &__menu {
+    @include clearListStyles;
+    color: $grey;
+  }
+  &__menu-item {
+    line-height: 1.4;
+  }
+  &__menu-link {
+    color: $grey;
+    font-size: 14px;
+    line-height: 1;
+    text-decoration: none;
+  }
+  &__copy-right-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    color: $grey;
+  }
+
+}
+
+@media (min-width: 1024px) {}
+@media (max-width: 1024px) {
+  .footer {
+    &__logo-box {
+      margin-right: 32px;
+    }
+    &__menus {
+      justify-content: space-between;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .footer {
+    &__container {
+      flex-direction: column;
+    }
+    &__logo-box {
+      display: flex;
+      justify-content: space-between;
+      margin-right: 0;
+    }
+    &__menus {
+      justify-content: space-between;
+    }
+    &__menu-title {
+      &:not(:last-child) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+@media (max-width: 540px) {
+  .footer {
+      &__logo-box {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 16px;
+      & .main-logo {
+        margin-bottom: 15px;
+      }
+    }
+    &__logo-link {
+      margin: 0 0 24px 0;
+    }
+    &__menus {
+      flex-wrap: wrap;
+    }
+    &__menu-title {
+      width: calc(50% - 9px);
+      margin-bottom: 24px;
+      &:not(:nth-child(2n-1)) {
+        margin-right: 0;
+      }
+      &:not(:nth-child(2n)) {
+        margin-right: 17px;
+      }
+    }
+    &__menu-item {
+      line-height: 1.4;
+    }
+  }
+}

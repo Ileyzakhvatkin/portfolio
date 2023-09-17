@@ -1,0 +1,62 @@
+-var periods = [{title: 'C 1500 по 1599 гг'}, {title: 'C 1600 по 1699 гг'}, {title: 'C 1700 по 1799 гг'}, {title: 'C 1800 по 1899 гг'}, {title: 'C 1900 по 1999 гг'}, {title: 'C 2000 г'},]
+-var paints = [{name: 'Бергоньоне, Амброджо'}, {name: 'Биссоло, Франческо'}, {name: 'Больтраффио, Джованни'}, {name: 'Бонсиньори, Франческо'}, {name: 'Боттичини, Рафаэлло'}, {name: 'Брамантино'}, {name: 'Бреа, Людовико'}, {name: 'Бьяджо д’Антонио Туччи'}, {name: 'Веккьетта'}, {name: 'Андреа Верроккьо'}, {name: 'Доменико Гирландайо'}, {name: 'Беноццо Гоццоли'}, {name: 'Граначчи, Франческо'}, {name: 'Грегорио ди Чекко'}, {name: 'Джованни да Удине'}, {name: 'Джованни ди Паоло'}, {name: 'Джорджоне'}, {name: 'Парентино, Бернардо'}, {name: 'Пезеллино'}, {name: 'Пьетро Перуджино'}, {name: 'Перуцци, Бальдассаре'}, {name: 'Пизанелло'}, {name: 'Пинтуриккьо'}]
+section.catalog(id="catalog")
+  .catalog__container.container
+    h2.catalog__title.section-title Каталог
+    p.catalog__desc Акционеры крупнейших компаний, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут объявлены нарушающими общечеловеческие нормы этики и морали. Являясь всего лишь частью общей картины, стремящиеся вытеснить традиционное производство, нанотехнологии и по сей день остаются уделом либералов, которые жаждут быть функционально разнесены на независимые элементы.
+    .catalog__colums
+      .catalog__tabs.painter-tabs
+        ul.painter-tabs__list
+          li.painter-tabs__item.painter-tabs__avtive(data-target="painter-info")
+            picture.painter-tabs__pict
+              source.painter-tabs__sourse(srcset="./images/domenico.jpg" media="(min-width: 1025px)")
+              source.painter-tabs__sourse(srcset="./images/domenico_1024.jpg" media="(min-width: 769px)")
+              source.painter-tabs__sourse(srcset="./images/domenico_768.jpg" media="(min-width: 581px)")
+              source.painter-tabs__sourse(srcset="./images/domenico_320.jpg" media="(min-width: 200px)")
+              img.painter-tabs__img(src="./images/domenico.jpg" alt="Доменико Гирландайо")
+            h3.painter-tabs__title Доменико Гирландайо
+            .painter-tabs__data 2 июня 1448–11 января 1494
+            p.painter-tabs__desc Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и сын Ридольфо. Глава художественной мастерской, где юный Микеланджело в течение года овладевал профессиональными навыками. Автор фресковых циклов, в которых выпукло, со всевозможными подробностями показана домашняя жизнь библейских персонажей (в их роли выступают знатные граждане Флоренции в костюмах того времени).
+          each paint, index in paints
+            li.painter-tabs__item(data-target='painter-info-' + index)
+              picture.painter-tabs__pict
+                source.painter-tabs__sourse(srcset="./images/painter-plug.jpg" media="(min-width: 1025px)")
+                source.painter-tabs__sourse(srcset="./images/painter-plug_1024.jpg" media="(min-width: 769px)")
+                source.painter-tabs__sourse(srcset="./images/painter-plug_768.jpg" media="(min-width: 581px)")
+                source.painter-tabs__sourse(srcset="./images/painter-plug_320.jpg" media="(min-width: 200px)")
+                img.painter-tabs__img(src="./images/painter-plug.jpg" alt="Заглущка")
+              h3.painter-tabs__title Что мы знаем о #{paint.name}?
+              p.painter-tabs__desc Пока ничего… Зато мы точно знаем, что в галерее есть на что посмотреть!
+              a.painter-tabs__link.link(href="#")
+                span В галерею
+      .catalog__accordion
+        .catalog__acc-box
+          .catalog__acc-item
+            .catalog__acc-item-title C 1400 по 1499 гг
+            svg.catalog__acc-item-icon.slader-buttons
+              use(xlink:href="symbol/svg/sprite.symbol.svg#svg--slader-buttons")
+          .catalog__acc-open-text
+            ul.catalog__acc-open-greed.greed-acc
+              li.greed-acc__open-btn-box
+                button.greed-acc__open-btn.greed-acc__active-btn(data-path="painter-info" aria-label="подробнее о Бенедетто ди Биндо") Бенедетто ди Биндо
+              each painter, index in paints
+                li.greed-acc__open-btn-box
+                  button.greed-acc__open-btn(data-path='painter-info-' + index aria-label='подробнее о ' + painter.name) #{painter.name}
+              li.greed-acc__open-btn.d-none-item &nbsp;
+              li.greed-acc__open-btn.d-none-item &nbsp;
+              li.greed-acc__open-btn.d-none-item &nbsp;
+        each period in periods
+          .catalog__acc-box
+            .catalog__acc-item
+              .catalog__acc-item-title #{period.title}
+              svg.catalog__acc-item-icon
+                use(xlink:href="symbol/svg/sprite.symbol.svg#svg--slader-buttons")
+            .catalog__acc-open-text
+              .catalog__acc-not-info
+                .catalog__acc-not-info-border
+                  .catalog__acc-not-info-img
+                .catalog__acc-not-info-content
+                  .catalog__acc-not-info-title Здесь пока пусто
+                  .catalog__acc-not-info-desc А в галерее вы всегда можете найти что-то интересное для себя
+                  a.catalog__acc-not-info-link.link(href="#" aria-label="в галерею")
+                    span В галерею

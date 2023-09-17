@@ -1,0 +1,6 @@
+-var items = [{title: 'Тинторетто', url: './images/drop-menu/realizm_1.jpg'}, {title: 'Фридрих', url: './images/drop-menu/realizm_2.jpg'}, {title: 'Леонардо', url: './images/drop-menu/realizm_3.jpg'}, {title: 'Верроккьо', url: './images/drop-menu/realizm_4.jpg'}, {title: 'Тинторетто', url: './images/drop-menu/realizm_1.jpg'}, {title: 'Фридрих', url: './images/drop-menu/realizm_2.jpg'}, {title: 'Тинторетто', url: './images/drop-menu/realizm_1.jpg'}, {title: 'Фридрих', url: './images/drop-menu/realizm_2.jpg'}, {title: 'Леонардо', url: './images/drop-menu/realizm_3.jpg'}, {title: 'Верроккьо', url: './images/drop-menu/realizm_4.jpg'}, {title: 'Тинторетто', url: './images/drop-menu/realizm_1.jpg'}, {title: 'Фридрих', url: './images/drop-menu/realizm_2.jpg'}]
+.custom-scrol-menu(data-target="one")
+  ul.custom-scrol-menu__list(data-simplebar)
+    each item in items
+      li.custom-scrol-menu__item(style='background-image: url(' + item.url + ');')
+        a.custom-scrol-menu__link #{item.title}

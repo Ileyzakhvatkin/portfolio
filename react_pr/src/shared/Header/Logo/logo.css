@@ -1,0 +1,20 @@
+.logo {
+  display:  flex;
+  text-align: center;
+  justify-content: center;
+  }
+
+.logo:hover .logoTitle,
+.logo:active .logoTitle {
+  color: var(--reddark);
+}
+
+.logoTitle {
+  margin-left: 12px;
+  color: var(--red);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 38px;
+  transform: color 0.5s cubic-bezier(0,.42,.16,.97);
+}

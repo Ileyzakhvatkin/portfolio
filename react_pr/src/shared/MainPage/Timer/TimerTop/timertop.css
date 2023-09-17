@@ -1,0 +1,31 @@
+.timerTop {
+  display: flex;
+  align-items: center;
+  padding: 19px 40px;
+  color: var(--white);
+  width: 100%;
+}
+
+.topColorGrey {
+  background-color: var(--greyC4);
+}
+
+.topColorRed {
+  background-color: var(--red);
+}
+
+.topColorGreen {
+  background-color: var(--greenlight);
+}
+
+.taskTitle {
+  margin-right: auto;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 17px;
+}
+
+.pomodori {
+  font-size: 16px;
+  line-height: 17px;
+}

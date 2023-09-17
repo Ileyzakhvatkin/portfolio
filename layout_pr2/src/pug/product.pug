@@ -1,0 +1,75 @@
+-var breadcrumbs = [{title: 'Главная'}, {title: 'Каталог'}, {title: 'Диваны'}, {title: 'Прямые диваны'}, {title: 'D-31'}]
+-var fproducts = [{rat: '4.5', img: 'images/product/prod-add-1.png', name: 'Диван велюровый “R-85”', price: '34 990'}, {rat: '4.5', img: 'images/product/prod-add-2.png', name: 'Диван флоковый “H-58”', price: '23 990'}, {rat: '4.5', img: 'images/product/prod-add-3.png', name: 'Диван велюровый “S-44”', price: '19 990'}, {rat: '4.3', img: 'images/product/prod-add-4.png', name: 'Диван шиниловый “V-43”', price: '19 990'}, {rat: '4.5', img: 'images/product/prod-add-1.png', name: 'Диван велюровый “R-85”', price: '34 990'}, {rat: '4.5', img: 'images/product/prod-add-2.png', name: 'Диван флоковый “H-58”', price: '23 990'}, {rat: '4.5', img: 'images/product/prod-add-3.png', name: 'Диван велюровый “S-44”', price: '19 990'}, {rat: '4.3', img: 'images/product/prod-add-4.png', name: 'Диван шиниловый “V-43”', price: '19 990'}]
+-var props = [{tit: 'Гарантия', name: '18 месяцев'}, {tit: 'Артикул', name: 'AAA41269004'}, {tit: 'Длина', name: '163 см'}, {tit: 'Высота', name: '90 см'}, {tit: 'Глубина', name: '108 см'}, {tit: 'Спальное место', name: '200 см х 125 см'}, {tit: 'Высота посадки', name: '45 см'}, {tit: 'Механизм', name: 'Опорный'}, {tit: 'Тип обивки', name: 'Рогожка'}, {tit: 'Цвет', name: 'Синий'}, {tit: 'Наполнитель', name: 'Независимый пружинный блок'}, {tit: 'Материал каркаса', name: 'Металл. рама с дерев. латами'}, {tit: 'Количество мест', name: 'Двухместные'}, {tit: 'Категория', name: 'Прямые тканевые диваны'}, {tit: 'Возврат', name: 'Условия'}]
+main.main
+  section.prod-details
+    .prod-details__container.container
+      .prod-details__breadcrumbs.breadcrumbs
+        each breadcrumb in breadcrumbs
+          a.breadcrumbs__link(href="#") #{breadcrumb.title}
+      .prod-details__grid
+        .prod-details__cel
+          .prod-details__images
+            .prod-details__img-main-box
+              img.prod-details__img-main.lazyload(data-src="images/product/prod-main-0.png" alt="Диван тканевый прямой")
+            .prod-details__thumb-btn-grope
+              .prod-details__thumb-btn-cel
+                .prod-details__btn-group.prod-btn
+                  include prodimggroup.pug
+              .prod-details__thumb-btn-cel
+                include prbtngrope.pug
+        .prod-details__cel
+          .prod-details__cel-btn
+            include prbtngrope.pug
+        .prod-details__cel
+          .prod-details__desc.prod-desc
+            h3.prod-desc__desc-title Опорный механизм
+            .prod-desc__desc-text
+              p Опорный механизм напоминает пантограф, к которому добавили дополнительную секцию. У опорного дивана сиденье «выпрыгивает» вперёд и вытаскивает вторую часть спального места. Заключительный штрих — опустить спинку.
+              p Этот механизм не портит пол и не боится ковров. Требуется чуть больше силы, чтобы разложить диван, но подросток справится.
+          .prod-details__drawing
+            img.prod-details__drawing-img.lazyload(data-src="./images/product/prod-bg-1.jpg" alt="Схема продукта")
+            img.prod-details__drawing-img.lazyload(data-src="./images/product/prod-bg-2.jpg" alt="Схема продукта")
+        .prod-details__cel
+          .prod-details__prop-box
+            each prop in props
+              .prod-details__prop-row
+                .prod-details__prop-title
+                  span.prod-details__prop-title-span #{prop.tit}
+                .prod-details__prop-name
+                  span.prod-details__prop-name-span #{prop.name}
+  section.add-prod
+    .add-prod__container.container
+      .add-prod__slader.swiper
+        .add-prod__slader-title-box.slader-buttons
+          h2.add-prod__title.slader-buttons__title Похожие товары
+          .add-prod__slader-button-box-bottom.slader-buttons__box
+            button.slader-buttons__button(aria-label="предыдущий слайд")
+              svg.add-prod__button-prev.slader-buttons__prev(width="32" height="32")
+                use(xlink:href="symbol/svg/sprite.symbol.svg#svg--arrow")
+            button.slader-buttons__button(aria-label="следующий слайд")
+              svg.add-prod__button-next.slader-buttons__next(width="32" height="32")
+                use(xlink:href="symbol/svg/sprite.symbol.svg#svg--arrow")
+        ul.add-prod__list.swiper-wrapper
+          each fproduct in fproducts
+            li.add-prod__item.prod-cart.swiper-slide
+              .prod-cart__raiting
+                svg.prod-cart__icon(width="16" height="15")
+                  use(xlink:href="symbol/svg/sprite.symbol.svg#svg--star")
+                span #{fproduct.rat}
+              .prod-cart__img-box
+                a.prod-cart__link(href="./product.html" aria-label="подробнее о товаре")
+                  img.prod-cart__img.lazyload(data-src=fproduct.img alt=fproduct.name)
+              h3.prod-cart__name #{fproduct.name}
+              h4.prod-cart__price #{fproduct.price} руб
+              .prod-cart__btn-box
+                button.prod-cart__btn.btn.btn-light Купить
+        .add-prod__slader-button-box.slader-buttons.box-bottom
+          button.slader-buttons__button
+            svg.add-prod__button-prev.slader-buttons__prev(width="32" height="32")
+              use(xlink:href="symbol/svg/sprite.symbol.svg#svg--arrow")
+          button.slader-buttons__button
+            svg.add-prod__button-next.slader-buttons__next(width="32" height="32")
+              use(xlink:href="symbol/svg/sprite.symbol.svg#svg--arrow")
+
+

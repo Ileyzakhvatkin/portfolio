@@ -1,0 +1,36 @@
+.box {
+  margin: 25px auto;
+}
+
+.title {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.map {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--greyC4);
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: grab;
+}
+
+.task:not(:last-child) {
+  margin-right: 12px;
+}
+
+.taskOver {
+  background-color: var(--greyF4);
+}

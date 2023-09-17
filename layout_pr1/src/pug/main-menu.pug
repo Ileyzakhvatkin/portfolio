@@ -1,0 +1,15 @@
+-var hmenus = [{item: 'О нас', url: '#about'}, {item: 'Галерея', url: '#gallery'}, {item: 'Каталог', url: '#catalog'}, {item: 'События', url: '#events'}, {item: 'Проекты', url: '#projects'}, {item: 'Контакты', url: '#contacts'}]
+.main-menu
+  .main-menu__container.container
+    a.main-menu__logo-link(aria-label="Проект Blanchard")
+      img.main-menu__logo-icon(src="./images/logo.svg" alt="Проект Blanchard")
+    .main-menu__menu
+      ul.main-menu__menu-list
+        each hmenu in hmenus
+          li.main-menu__menu-item
+            a.main-menu__menu-link(href=hmenu.url) #{hmenu.item}
+      .main-menu__enter
+        a.main-menu__enter-link(href="./" aria-label="Войти")
+          svg.main-menu__enter-icon(width="15" height="13")
+            use(xlink:href="symbol/svg/sprite.symbol.svg#svg--enter")
+          span.main-menu__enter-text Войти

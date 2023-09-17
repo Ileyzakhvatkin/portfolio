@@ -1,0 +1,7 @@
+.idea
+.DS_store
+node_modules
+/dist
+/dev
+
+my_links.md

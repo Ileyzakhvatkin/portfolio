@@ -1,0 +1,89 @@
+@import '_variabels.scss';
+@import '_mixin.scss';
+
+.footer {
+  background-color: $black00;
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 140px;
+  }
+  &__logo-link {
+    margin-right: 179px;
+    transition: opacity 0.5s;
+  }
+  &__logo-icon {
+    width: 173px;
+    height: 40px;
+  }
+  &__logo-title {
+    color: $white;
+    line-height: 1;
+    transform: translateY(-8px);
+  }
+  &__social-list {
+    @include clearListStyles;
+    display: flex;
+  }
+  &__social-item {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+  &__social-icon {
+    height: 45px;
+    width: 45px;
+    fill: $greyCA;
+    transition: fill 0.5s;
+  }
+  &__social-link {
+    &:hover .footer__social-icon {
+      fill: $white;
+    }
+    &:focus .footer__social-icon {
+      fill: $white;
+    }
+    &:active .footer__social-icon {
+      fill: $violet0;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer {
+    &__logo-icon {
+      width: 188px;
+      height: 42px;
+    }
+    &__social-icon {
+      height: 60px;
+      width: 60px;
+    }
+  }
+}
+@media (max-width: 768px) {}
+@media (max-width: 580px) {
+  .footer {
+    &__container {
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+      height: 132px;
+    }
+    &__logo-link {
+      margin: 0;
+    }
+    &__logo-icon {
+      width: 97px;
+      height: 22px;
+    }
+    &__social-list {
+      margin-bottom: 18px;
+    }
+    &__social-icon {
+      height: 50px;
+      width: 50px;
+    }
+  }
+}

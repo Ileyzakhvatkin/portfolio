@@ -1,0 +1,51 @@
+@import '_variabels.scss';
+@import '_mixin.scss';
+
+.price-range {
+  height: 58px;
+  margin-bottom: 26px;
+  &__input-box {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  &__input {
+    width: 90px;
+    margin-left: 5px;
+    padding: 5px 13px;
+  }
+  &__filter {
+    &.ui-slider-horizontal {
+      width: 100%;
+      height: 3px;
+      border: none;
+      background: $greyLight;
+      &:hover .ui-widget-header,
+      &:focus .ui-widget-header,
+      &:active .ui-widget-header {
+        background: $violet3;
+      }
+    }
+    & .ui-slider-horizontal {
+      margin-bottom: 15px;
+      width:100%;
+    }
+    & .ui-widget-header {
+      background: $violet1;
+    }
+    & .ui-state-default {
+      width: 13px;
+      height: 13px;
+      background: url('../images/range-t1.svg') no-repeat center center;
+      border: none;
+      transform: translate(1px, 5px);
+    }
+    & .ui-state-hover,
+    & .ui-state-focus,
+    & .ui-state-active {
+      background: url('../images/range-t2.svg') no-repeat center center;
+      border: none;
+      outline: none;
+    }
+  }
+}

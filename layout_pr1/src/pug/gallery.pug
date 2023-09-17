@@ -1,0 +1,44 @@
+-var gallery = [{u1: './images/gallery/galery_1.jpg', u2: './images/gallery/galery_1_1024.jpg', u3: './images/gallery/galery_1_768.jpg', u4: './images/gallery/galery_1_320.jpg'}, {u1: './images/gallery/galery_2.jpg', u2: './images/gallery/galery_2_1024.jpg', u3: './images/gallery/galery_2_768.jpg', u4: './images/gallery/galery_2_320.jpg'}, {u1: './images/gallery/galery_3.jpg', u2: './images/gallery/galery_3_1024.jpg', u3: './images/gallery/galery_3_768.jpg', u4: './images/gallery/galery_3_320.jpg'}, {u1: './images/gallery/galery_4.jpg', u2: './images/gallery/galery_4_1024.jpg', u3: './images/gallery/galery_4_768.jpg', u4: './images/gallery/galery_4_320.jpg'}, {u1: './images/gallery/galery_5.jpg', u2: './images/gallery/galery_5_1024.jpg', u3: './images/gallery/galery_5_768.jpg', u4: './images/gallery/galery_5_320.jpg'}, {u1: './images/gallery/galery_6.jpg', u2: './images/gallery/galery_6_1024.jpg', u3: './images/gallery/galery_6_768.jpg', u4: './images/gallery/galery_6_320.jpg'}]
+section.gallery(id="gallery")
+  .gallery__container.container
+    .gallery__filter
+      h2.gallery__filter-title.section-title Галерея
+      p.gallery__filter-desc Фильтр:
+      select.gallery__select.cust-select(name="gallery-select" id="gallery-select")
+        option.cust-select__option(value="Живопись") Живопись
+        option.cust-select__option(value="Рисунок") Рисунок
+        option.cust-select__option(value="Скульптура") Скульптура
+      .gallery__check-group
+        label.gallery__check-lable.cust-check(for="19century")
+          input.cust-check__input-hidden.checkbox(type="checkbox" id="19century")
+          span.cust-check__visible(tabindex="0")
+          span.cust-check__text XIX век
+        label.gallery__check-lable.cust-check(for="20century")
+          input.cust-check__input-hidden.checkbox(type="checkbox" id="20century" checked)
+          span.cust-check__visible(tabindex="0")
+          span.cust-check__text XX век
+        label.gallery__check-lable.cust-check(for="modernity")
+          input.cust-check__input-hidden.checkbox(type="checkbox" id="modernity")
+          span.cust-check__visible(tabindex="0")
+          span.cust-check__text Современность
+    .gallery__swiper.swiper
+      .gallery__swiper-control
+        button.gallery__button-prev.slader-buttons-black(aria-label="предыдущий слайд")
+          svg(width="30" height="30")
+            use(xlink:href="symbol/svg/sprite.symbol.svg#svg--slader-buttons")
+        .gallery__pagination
+        button.gallery__button-next.slader-buttons-black(aria-label="следующий слайд")
+          svg(width="30" height="30")
+            use(xlink:href="symbol/svg/sprite.symbol.svg#svg--slader-buttons")
+      .gallery__list-img.swiper-wrapper
+        each image in gallery
+          a.gallery__item-img-link.swiper-slide(tabindex="0" aria-label="Подробнее о картине")
+            picture.gallery__pict
+              source.gallery__sourse(srcset=image.u1 media="(min-width: 1025px)")
+              source.gallery__sourse(srcset=image.u2 media="(min-width: 769px)")
+              source.gallery__sourse(srcset=image.u3 media="(min-width: 581px)")
+              source.gallery__sourse(srcset=image.u4 media="(min-width: 200px)")
+              img.gallery__img(src=image.u1 alt="Картина")
+            //- img.gallery__item-img(src=image.url alt="Партнер проекта")
+            .gallery__item-box
+

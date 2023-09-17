@@ -1,0 +1,48 @@
+.modalBg {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 30vh;
+  transform: translateX(-50%);
+  z-index: 1000;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.15);
+  border-radius: 7px;
+  min-width: 200px;
+  min-height: 160px;
+  max-width: 80%;
+  margin-bottom: 25px;
+}
+
+.contentModal {
+  position: relative;
+  padding: 36px;
+  overflow-y: auto;
+}
+
+.closeModal {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+  transition: opacity 0.5s cubic-bezier(0,.42,.16,.97);
+}
+
+.closeModal:hover,
+.closeModal:focus {
+  opacity: 0.75;
+}
+
+.closeModal:active {
+  opacity: 1;
+}

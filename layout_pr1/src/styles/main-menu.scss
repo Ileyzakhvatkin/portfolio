@@ -1,0 +1,183 @@
+@import '_variabels.scss';
+@import '_mixin.scss';
+
+.main-menu {
+  background-color: $black00;
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100px;
+  }
+  &__logo-link {
+    transition: opacity 0.5s;
+    flex: 1 1 21%;
+  }
+  &__logo-icon {
+    width: 173px;
+    height: 40px;
+  }
+  &__logo-title {
+    color: $white;
+    line-height: 1;
+    transform: translateY(-8px);
+  }
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    flex: 1 1 78%;
+  }
+  &__menu-list {
+    @include clearListStyles;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    // justify-content: space-between;
+  }
+  &__menu-item {
+    &:not(:last-child) {
+      margin-right: 54px;
+    }
+  }
+  &__menu-link {
+    display: inline-block;
+    padding: 2px 6px;
+    color: $white;
+    font-size: 18px;
+    transition: color 0.5s, background-color 0.5s;
+    &:hover:not(:focus):not(:active) {
+      color: $violet1;
+    }
+    &:focus:not(:hover):not(:active) {
+      background-color: $violet1;
+    }
+    &:active {
+      color: $violet0;
+    }
+  }
+  &__enter {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  &__enter-link {
+    padding: 2px 6px;
+    color: $white;
+    transition: color 0.5s, background-color 0.5s;
+    &:hover:not(:focus):not(:active) {
+      color: $violet1;
+    }
+    &:focus:not(:hover):not(:active) {
+      background-color: $violet1;
+    }
+    &:active {
+      color: $violet0;
+    }
+    &:hover .main-menu__enter-icon {
+      fill: $violet1;
+      --enter-o-1: 0;
+      --enter-o-2: 2;
+    }
+    &:focus .main-menu__enter-icon {
+      fill: $white;
+      --enter-o-1: 1;
+      --enter-o-2: 0;
+    }
+    &:active .main-menu__enter-icon {
+      fill: $violet0;
+      --enter-o-1: 0;
+      --enter-o-2: 2;
+    }
+  }
+  &__enter-icon {
+    margin-right: 7px;
+    fill: $white;
+    transform: translateY(1px);
+    transition: fill 0.5s;
+    --enter-o-1: 1;
+    --enter-o-2: 0;
+  }
+  &__enter-icon path {
+    transition: opacity 0.5s;
+  }
+  &__enter-text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1250px) {
+  .main-menu {
+    &__menu-item {
+      &:not(:last-child) {
+        margin-right: 25px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  .main-menu {
+    &__menu-list {
+      flex: 1 1 85%;
+      transform: translateY(-2px);
+    }
+    &__enter {
+      flex: 1 1 15%;
+      transform: translateX(6px) translateY(-4px);
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-menu {
+    position: relative;
+    z-index: 100;
+    &__logo-icon {
+      transform: translateX(16px) translateY(-1px);
+    }
+    &__menu-mobule{
+      display: block;
+    }
+    &__logo-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transform: translateX(-16px);
+    }
+    &__logo-icon {
+      width: 188px;
+      height: 42px;
+    }
+    &__menu {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {}
+
+@media (max-width: 580px) {
+  .main-menu {
+    &__container {
+      min-height: 45px;
+    }
+    &__logo-link {
+      transform: translateX(-16px);
+    }
+    &__logo-icon {
+      width: 97px;
+      height: 22px;
+    }
+    &__search-open {
+      height: 45px;
+    }
+    &__search-icon-open {
+      width: 18px;
+      height: 18px;
+    }
+    &__enter-link {
+      padding: 11px 32px;
+    }
+  }
+}

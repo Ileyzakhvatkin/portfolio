@@ -1,0 +1,197 @@
+-var soffers = [{sale: '- 9 000', img: 'images/home/sp-offer-1.png', name: 'Кресло велюровое “X-24”', price1: '15 990', price2: '24 990', bg: ''}, {sale: '- 10 000', img: 'images/home/sp-offer-2.png', name: 'Диван тканевый “Z-44”', price1: '22 990', price2: '32 990', bg: 'background-image: url("images/home/sp-offer-bg-1.png")'}, {sale: '- 600', img: 'images/home/sp-offer-3.png', name: 'Будильник  “Quartz-23”', price1: '1 290', price2: '1 890', bg: ''}, {sale: '- 300', img: 'images/home/sp-offer-2-1.png', name: 'Мини-скульптура “Oh my deer”', price1: '690', price2: '990', bg: ''}, {sale: '- 10 000', img: 'images/home/sp-offer-2-2.png', name: 'Диван вел-флок “Z-85”', price1: '22 990', price2: '32 990', bg: 'background-image: url("images/home/sp-offer-bg-2.png")'}, {sale: '- 700', img: 'images/home/sp-offer-2-3.png', name: 'Термометр + гидрометр “H-18”', price1: '1 390', price2: '2 090', bg: ''}]
+-var hprods = [{rat: '5.0', img: 'images/home/prod-high-1.png', name: 'Диван кожаный “R-94”', price: '94 990'}, {rat: '4.9', img: 'images/home/prod-high-2.png', name: 'Диван апартековый “T-75”', price: '69 990'}, {rat: '4.8', img: 'images/home/prod-high-3.png', name: 'Диван тканевый “D-31”', price: '28 490'}, {rat: '4.8', img: 'images/home/prod-high-4.png', name: 'Диван велюровый “Y-68”', price: '22 990'}, {rat: '4.8', img: 'images/home/prod-high-5.png', name: 'Диван из шинила “W-95”', price: '22 990'}, {rat: '4.8', img: 'images/home/prod-high-6.png', name: 'Диван флоковый “G-41”', price: '17 990'}, {rat: '4.8', img: 'images/home/prod-high-7.png', name: 'Диван шиниловый “V-43”', price: '19 990'}, {rat: '4.7', img: 'images/home/prod-high-8.png', name: 'Диван велюровый “S-99”', price: '19 990'}]
+-var topcats = [{img: 'images/home/top-cat-1.png', imgp: 'images/home/top-cat-1-1024.png', imgs: 'images/home/top-cat-1-768.png', imgm: 'images/home/top-cat-1-320.png', name: 'Диваны', prop1: 'Прямые', prop2: 'Угловые', prop3: 'Модульные'}, {img: 'images/home/top-cat-2.png', imgp: 'images/home/top-cat-2-1024.png', imgs: 'images/home/top-cat-2-768.png', imgm: 'images/home/top-cat-2-320.png', name: 'Кресла', prop1: 'Мягкие', prop2: 'Кресла-кровати', prop3: ''}, {img: 'images/home/top-cat-3.png', imgp: 'images/home/top-cat-3-1024.png', imgs: 'images/home/top-cat-3-768.png', imgm: 'images/home/top-cat-3-320.png', name: 'Кровати', prop1: 'Односпальные', prop2: 'Двуспальные', prop3: ''}, {img: 'images/home/top-cat-4.png', imgp: 'images/home/top-cat-4-1024.png', imgs: 'images/home/top-cat-4-768.png', imgm: 'images/home/top-cat-4-320.png', name: 'Тумбы и комоды', prop1: 'Тумбы', prop2: 'Комоды', prop3: ''}, {img: 'images/home/top-cat-5.png', imgp: 'images/home/top-cat-5-1024.png', imgs: 'images/home/top-cat-5-768.png', imgm: 'images/home/top-cat-5-320.png', name: 'Стулья', prop1: 'Деревянные', prop2: 'Металлокаркас', prop3: ''}]
+main.main
+  section.banners.swiper
+    .swiper-wrapper.banners__banner-box
+      .swiper-slide.banners__banner(id="slide-1")
+        .banners__container.container
+          .banners__box
+            h1.banners__title Скидка 15% на&nbsp;первую покупку
+          button.banners__btn.btn Получить!
+      .swiper-slide.banners__banner(id="slide-2")
+        .banners__container.container
+          .banners__box
+            h1.banners__title 1000+&nbsp;аксессуаров для&nbsp;дома
+          button.banners__btn.btn Подробнее
+      .swiper-slide.banners__banner(id="slide-3")
+        .banners__container.container
+          .banners__box
+            h1.banners__title.color-white.width590 Коллекция стильного и&nbsp;яркого текстиля
+          button.banners__btn.btn Подробнее
+    .banners__pagination.swiper-pagination
+  section.special-offer
+    .special-offer__container.container
+      .special-offer__slader.swiper
+        .special-offer__slader-title-box.slader-buttons
+          h2.special-offer__title.slader-buttons__title Специальные предложения
+          .special-offer__slader-button-box.slader-buttons__box
+            button.slader-buttons__button(aria-label="предыдущий слайд")
+              svg.special-offer__button-prev.slader-buttons__prev(width="32" height="32")
+                use(xlink:href="symbol/svg/sprite.symbol.svg#svg--arrow")
+            button.slader-buttons__button(aria-label="следующий слайд")
+              svg.special-offer__button-next.slader-buttons__next(width="32" height="32")
+                use(xlink:href="symbol/svg/sprite.symbol.svg#svg--arrow")
+        ul.special-offer__list.swiper-wrapper
+          each soffer in soffers
+            li.special-offer__item.swiper-slide(style=soffer.bg)
+              .special-offer__sale
+                svg.special-offer__sale-icon(width="92" height="34")
+                    use(xlink:href="symbol/svg/sprite.symbol.svg#svg--bg-sale")
+                span.special-offer__sale-span #{soffer.sale}
+              .special-offer__prog-img-box
+                a.special-offer__prog-link(href="./product.html" aria-label="подробнее о товаре")
+                  img.special-offer__prog-img.lazyload(data-src=soffer.img alt="Товар с высоким рейтингом")
+              h3.special-offer__prod-name #{soffer.name}
+              h4.special-offer__prod-price
+                span.special-offer__prod-price-1 #{soffer.price1} руб
+                span.special-offer__prod-price-2 #{soffer.price2} руб
+              .special-offer__btn-box
+                button.special-offer__prod-btn.btn.btn-light Купить
+        .special-offer__slader-button-box-bottom.slader-buttons.box-bottom
+          button.slader-buttons__button
+            svg.special-offer__button-prev.slader-buttons__prev(width="32" height="32")
+              use(xlink:href="symbol/svg/sprite.symbol.svg#svg--arrow")
+          button.slader-buttons__button
+            svg.special-offer__button-next.slader-buttons__next(width="32" height="32")
+              use(xlink:href="symbol/svg/sprite.symbol.svg#svg--arrow")
+  section.high-raiting
+    .high-raiting__container.container
+      h2.high-raiting__title.section-title Высокий рейтинг
+      ul.high-raiting__list
+        each hprod in hprods
+          li.high-raiting__item.prod-cart
+            .prod-cart__raiting
+              svg.prod-cart__icon(width="16" height="15")
+                use(xlink:href="symbol/svg/sprite.symbol.svg#svg--star")
+              span #{hprod.rat}
+            .prod-cart__img-box
+              a.prod-cart__link(href="./product.html")
+                img.prod-cart__img.lazyload(data-src=hprod.img alt="Товар с высоким рейтингом" aria-label="подробнее о товаре")
+            h3.prod-cart__name #{hprod.name}
+            h4.prod-cart__price #{hprod.price} руб
+            .prod-cart__btn-box
+              button.prod-cart__btn.btn.btn-light Купить
+      .high-raiting__more-button-box
+        a.high-raiting__more-btn.btn(href="./category.html") Смотреть больше товаров
+  section.banner-new
+    .banner-new__container.container
+      .banner-new__box
+        h1.banner-new__title Оксфорд 1950
+        h3.banner-new__desc Новая коллекция изысканных кресел
+      button.banner-new__btn.btn Ознакомиться
+  section.top-category
+    .top-category__container.container
+      h2.top-category__title.section-title Топ категории
+      ul.top-category__list
+        each topcat in topcats
+          li.top-category__item
+            .top-category__prop
+              a.top-category__prop-link.link(href="./") #{topcat.prop1}
+              a.top-category__prop-link.link(href="./") #{topcat.prop2}
+              a.top-category__prop-link.link(href="./") #{topcat.prop3}
+            h3.top-category__name #{topcat.name}
+              a.top-category__link-title.custom-link(href="./category.html")
+                svg.custom-link__icon(width="22" height="22")
+                  use(xlink:href="symbol/svg/sprite.symbol.svg#svg--arrow")
+            .top-category__img-box
+              picture.top-category__pict
+                source.top-category__sourse(srcset=topcat.img media="(min-width: 1025px)")
+                source.top-category__sourse(srcset=topcat.imgp media="(min-width: 769px)")
+                source.top-category__sourse(srcset=topcat.imgs media="(min-width: 541px)")
+                source.top-category__sourse(srcset=topcat.imgm media="(min-width: 200px)")
+                img.top-category__img(src=topcat.img alt="Полезное")
+            a.top-category__link-box.custom-link(href="./category.html" aria-label="Перейти в каталог") В каталог
+              svg.custom-link__icon(width="22" height="22")
+                use(xlink:href="symbol/svg/sprite.symbol.svg#svg--arrow")
+  section.useful
+    .useful__container.container
+      .useful__slader.swiper
+        .useful__slader-title-box.slader-buttons
+          h2.useful__title.slader-buttons__title Полезное
+          .useful__slader-button-box-bottom.slader-buttons__box
+            button.slader-buttons__button(aria-label="предыдущая стаья")
+              svg.useful__button-prev.slader-buttons__prev(width="32" height="32")
+                use(xlink:href="symbol/svg/sprite.symbol.svg#svg--arrow")
+            button.slader-buttons__button(aria-label="следующая стаья")
+              svg.useful__button-next.slader-buttons__next(width="32" height="32")
+                use(xlink:href="symbol/svg/sprite.symbol.svg#svg--arrow")
+        ul.useful__list.swiper-wrapper
+          li.useful__item.swiper-slide
+            picture.useful__pict
+              source.useful__sourse(srcset="images/home/useful-1.jpg" media="(min-width: 1025px)")
+              source.useful__sourse(srcset="images/home/useful-m-1.webp" media="(min-width: 200px)")
+              img.useful__img(src="images/home/useful-1.jpg" alt="Полезное")
+            p.useful__desc И нет сомнений, что сделанные на базе интернет-аналитики выводы представляют собой не что иное?
+            .useful__btn-box
+              button.useful__btn.btn.btn-light(aria-label="читать стаью") Читать
+          li.useful__item.swiper-slide
+            picture.useful__pict
+              source.useful__sourse(srcset="images/home/useful-2.jpg" media="(min-width: 1025px)")
+              source.useful__sourse(srcset="images/home/useful-m-2.webp" media="(min-width: 200px)")
+              img.useful__img(src="images/home/useful-2.jpg" alt="Полезное")
+            p.useful__desc Как принято считать, некоторые особенности приносят несомненную пользу обществу?
+            .useful__btn-box
+              button.useful__btn.btn.btn-light(aria-label="читать стаью") Читать
+          li.useful__item.swiper-slide
+            picture.useful__pict
+              source.useful__sourse(srcset="images/home/useful-3.jpg" media="(min-width: 1025px)")
+              source.useful__sourse(srcset="images/home/useful-m-3.webp" media="(min-width: 200px)")
+              img.useful__img(src="images/home/useful-3.jpg" alt="Полезное")
+            p.useful__desc Ясность нашей позиции очевидна: укрепление и развитие внутренней структуры?
+            .useful__btn-box
+              button.useful__btn.btn.btn-light(aria-label="читать стаью") Читать
+          li.useful__item.swiper-slide
+            picture.useful__pict
+              source.useful__sourse(srcset="images/home/useful-4.jpg" media="(min-width: 1025px)")
+              source.useful__sourse(srcset="images/home/useful-m-4.webp" media="(min-width: 200px)")
+              img.useful__img(src="images/home/useful-4.jpg" alt="Полезное")
+            p.useful__desc Прежде всего, консультация с широким активом однозначно фиксирует необходимость распределения?
+            .useful__btn-box
+              button.useful__btn.btn.btn-light(aria-label="читать стаью") Читать
+          li.useful__item.swiper-slide
+            picture.useful__pict
+              source.useful__sourse(srcset="images/home/useful-5.jpg" media="(min-width: 1025px)")
+              source.useful__sourse(srcset="images/home/useful-m-5.webp" media="(min-width: 200px)")
+              img.useful__img(src="images/home/useful-5.jpg" alt="Полезное")
+            p.useful__desc Как принято считать, некоторые особенности приносят несомненную пользу обществу?
+            .useful__btn-box
+              button.useful__btn.btn.btn-light(aria-label="читать стаью") Читать
+        .useful__slader-button-box.slader-buttons.box-bottom
+          button.slader-buttons__button
+            svg.useful__button-prev.slader-buttons__prev(width="32" height="32")
+              use(xlink:href="symbol/svg/sprite.symbol.svg#svg--arrow")
+          button.slader-buttons__button
+            svg.useful__button-next.slader-buttons__next(width="32" height="32")
+              use(xlink:href="symbol/svg/sprite.symbol.svg#svg--arrow")
+  section.user-message
+    .user-message__container.container
+      .user-message__cell
+        h1.user-message__title Мы всегда вам рады!
+        .user-message__desc Безусловно, новая модель организационной деятельности в значительной степени обусловливает важность распределения внутренних резервов и ресурсов.
+          .tultip
+            .user-message__tooltip.tultip__marker(tabindex="0") ?
+            .tultip__pupup Реплицированные с зарубежных источников, исследования формируют глобальную сеть.
+        form.user-message__form.form(id="userform")
+          input(type="hidden" name="admin_email[]" value="iley.zakhvatkin@gmail.com")
+          input(type="hidden" name="form_subject" value="Письмо с главной страницы")
+          label.user-message__lable.form__lable(for="username")
+            input.user-message__input.form__input(type="text" placeholder="Как вас зовут?" data-validate-field="username" id="username" name="username")
+          label.user-message__lable.form__lable(for="userphone" )
+            input.user-message__input.form__input(type="tel" placeholder="Ваш телефон" data-validate-field="userphone" id="userphone" name="userphone")
+          label.user-message__lable.form__lable(for="useremail")
+            input.user-message__input.form__input(type="email" placeholder="Ваш e-mail" data-validate-field="useremail" id="useremail" name="useremail")
+          .user-message__submit-box
+            input.user-message__submit.btn(type="submit" value="Отправить")
+            .user-message__agre.agreement
+              label.agreement__check-lable.cust-check(for="user-agreement")
+                input.agreement__check-input.cust-check__input(type="checkbox" id="user-agreement" checked)
+                span.agreement__check-span.cust-check__span(tabindex="0")
+                span Принимаю
+                a.agreement__agre-link(href="./")  пользовательское соглашение
+      .user-message__cell
+        picture.user-message__pict
+          source.user-message__sourse(srcset="images/home/bg-user-mess.jpg" media="(min-width: 1025px)")
+          source.user-message__sourse(srcset="images/home/bg-user-mess-1024.webp" media="(min-width: 860px)")
+          source.user-message__sourse(srcset="images/home/bg-user-mess-768.webp" media="(min-width: 541px)")
+          img.user-message__img(src="images/home/bg-user-mess.jpg" alt="Фон формы")

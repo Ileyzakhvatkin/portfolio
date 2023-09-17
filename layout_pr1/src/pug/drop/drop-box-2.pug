@@ -1,0 +1,6 @@
+-var items = [{title: 'Моне', url: './images/drop-menu/impress_1.jpg'}, {title: 'Сислей', url: './images/drop-menu/impress_2.jpg'}, {title: 'Мане', url: './images/drop-menu/impress_3.jpg'}, {title: 'Ренуар', url: './images/drop-menu/impress_4.jpg'}]
+.custom-scrol-menu(data-target="two")
+  ul.custom-scrol-menu__list(data-simplebar)
+    each item in items
+      li.custom-scrol-menu__item(style='background-image: url(' + item.url + ');')
+        a.custom-scrol-menu__link #{item.title}

@@ -1,0 +1,12 @@
+.taskForm {
+  margin-bottom: 25px;
+}
+
+.taskInput {
+  width: 65%;
+}
+
+.taskFormError {
+  margin: 12px 0;
+  color: var(--red);
+}

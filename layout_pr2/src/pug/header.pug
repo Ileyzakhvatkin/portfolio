@@ -1,0 +1,60 @@
+-var citys = [{title: 'Москва'}, {title: 'Сочи'}, {title: 'Пенза'}, {title: 'Киев'}]
+-var items = [{title: 'О компании'}, {title: 'Гарантия и возврат'}, {title: 'Корпоративным клиентам'}, {title: 'Дизайн-решение'}]
+-var menus = [{title: 'Каталог'}, {title: 'Магазины'}, {title: 'Шоу-рум'}, {title: 'Доставка и оплата'}, {title: 'Дисконт'}, {title: 'Контакты'}]
+-var categores = [{title: 'Диваны'}, {title: 'Комоды'}, {title: 'Кресла'}, {title: 'Стулья'}, {title: 'Пуфы'}, {title: 'Столы'}, {title: 'Кровати'}, {title: 'Аксессуары'}, {title: 'Тумбы'}]
+header.header
+  .header__logo-mob
+      include logo.pug
+  .header__top
+    .header__top-container.container
+      .header__city-phone
+        .header__top-city
+          .header__top-city-title Ваш регион:
+          select.header__top-city-chesk.select-city
+            each city in citys
+              option(value="#{city.title}") #{city.title}
+        a.header__top-phone-link(href="tel:+74958854547")
+          svg.header__top-phone-icon(width="22" height="22")
+            use(xlink:href="symbol/svg/sprite.symbol.svg#svg--phone")
+          .header__top-phone +7 (495) 885-45-47
+      .header__top-menu-cab-basket
+        ul.header__top-list.menu
+          each item in items
+            li.header__top-item.menu__item
+              a.header__top-link.menu__link.link(href="./") #{item.title}
+        include cab-basket.pug
+  .header__main-container.container
+    .header__mobile-menu
+      svg.header__mobile-menu-icon(width="24" height="24")
+        use(xlink:href="symbol/svg/sprite.symbol.svg#svg--x")
+      .header__mobile-menu-list
+        each menu in menus
+          .header__mobile-menu-item
+            a.header__mobile-menu-link(href="./") #{menu.title}
+      .header__mobile-top-menu
+        ul.header__mobile-top-menu-list
+          each item in items
+            li.header__mobile-top-menu-item
+              a.header__mobile-top-menu-link(href="./") #{item.title}
+    svg.header__main-burger-icon(width="24" height="24")
+      use(xlink:href="symbol/svg/sprite.symbol.svg#svg--burger")
+    include logo.pug
+    ul.header__main-menu.menu
+      each menu in menus
+        li.header__main-item.menu__item
+          a.header__main-link.menu__link.link(href="./") #{menu.title}
+    include cab-basket.pug
+  .header__bottom-container.container
+    .header__bottom-search
+      svg.header__bottom-search-icon-left(width="16" height="16")
+        use(xlink:href="symbol/svg/sprite.symbol.svg#svg--search-linz")
+      input.header__bottom-search-input(type="text" placeholder="Я хочу купить...")
+      button.header__bottom-search-button(aria-label="Поиск по сайту")
+        svg.header__bottom-search-icon-right(width="34" height="34")
+          use(xlink:href="symbol/svg/sprite.symbol.svg#svg--search-arr")
+    select.header__bottom-category.select-category
+      option(value="Категория") Категория
+      each category in categores
+        option(value="#{category.title}") #{category.title}
+    include cab-basket.pug
+

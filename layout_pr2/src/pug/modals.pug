@@ -1,0 +1,29 @@
+.modal(id="one-click")
+  .modal__body
+    button.modal__close-btn
+      svg.modal__close(width="20" height="20")
+        use(xlink:href="symbol/svg/sprite.symbol.svg#svg--x")
+    .modal__one-clisk
+      .modal__one-clisk-title Купить в один клик
+      .modal__one-clisk-desc Чтобы оформить заказ — заполните формы ниже и наш менеджер свяжется с вами в течении часа.
+      form.modal__form.form(id="userorder")
+        input(type="hidden" name="admin_email[]" value="iley.zakhvatkin@yandex.ru")
+        input(type="hidden" name="form_subject" value="Заказ в один клик")
+        label.modal__lable.form__lable(for="userordername")
+          input.modal__input.form__input(type="text" placeholder="Как вас зовут?" data-validate-field="userordername" id="userordername" name="userordername")
+        label.modal__lable.form__lable(for="userorderphone")
+          input.modal__input.form__input(type="tel" placeholder="Ваш телефон" data-validate-field="userorderphone" id="userorderphone" name="userorderphone")
+        .modal__submit-box
+          button.modal__submit.btn(type="submit") Отправить
+          .modal__agre.agreement
+            label.agreement__check-lable.cust-check(for="user-agreement-modal")
+              input.agreement__check-input.cust-check__input(type="checkbox" id="user-agreement-modal" checked)
+              span.agreement__check-span.cust-check__span(tabindex="0")
+              span Принимаю
+              a.agreement__agre-link(href="./")  пользовательское соглашение
+    .modal__thank-you-win.modal__thank-you-win-none
+      .modal__box
+        svg.modal__logo(width="172" height="117")
+          use(xlink:href="symbol/svg/sprite.symbol.svg#svg--elefant")
+        h2.modal__title Спасибо, мы вам перезвоним!
+

@@ -1,0 +1,17 @@
+.modal(id="modal-wind")
+  .modal__body(data-simplebar)
+    .modal__box
+      button.modal__close-btn(type="button")
+        svg.modal__close(width="20" height="20")
+          use(xlink:href="symbol/svg/sprite.symbol.svg#svg--modal-x")
+      picture.modal__pict
+        source.modal__sourse(srcset="./images/modal/modal_1.jpg" media="(min-width: 1025px)")
+        source.modal__sourse(srcset="./images/modal/modal_1_1024.jpg" media="(min-width: 769px)")
+        source.modal__sourse(srcset="./images/modal/modal_1_768.jpg" media="(min-width: 581px)")
+        source.modal__sourse(srcset="./images/modal/modal_1_320.jpg" media="(min-width: 200px)")
+        img.modal__img(src="./images/modal/modal_1.jpg" alt="Картина")
+      .modal__cont
+        h3.modal__title Казимир Малевич
+        h4.modal__name «Женщина с граблями»
+        .modal__data 1931–1932
+        p.modal__text Картина из второй серии крестьянского цикла работ Казимира Малевича. Художник принялся за её создание в 1930–1931 годах, после того, как первый цикл был утерян после Берлинской и Варшавской выставок в 1927 году.

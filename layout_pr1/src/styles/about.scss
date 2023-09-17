@@ -1,0 +1,26 @@
+@import '_variabels.scss';
+@import '_mixin.scss';
+
+.about {
+  padding-top: 80px;
+  padding-bottom: 70px;
+  &__desc {
+    max-width: 1080px;
+    line-height: 32px;
+  }
+}
+
+@media (max-width: 1024px) {}
+@media (max-width: 768px) {}
+@media (max-width: 580px) {
+  .about {
+    padding-top: 38px;
+    padding-bottom: 42px;
+    &__title {
+      margin-bottom: -5px;
+    }
+    &__desc {
+      line-height: 28px;
+    }
+  }
+}

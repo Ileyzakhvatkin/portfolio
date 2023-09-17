@@ -1,0 +1,16 @@
+-var partners = [{url: './images/partners/partner_2.png'}, {url: './images/partners/partner_3.png'}, {url: './images/partners/partner_1.png'}, {url: './images/partners/partner_4.png'}, {url: './images/partners/partner_5.png'}, {url: './images/partners/partner_6.png'}, {url: './images/partners/partner_7.png'}, {url: './images/partners/partner_8.png'}, {url: './images/partners/partner_9.png'}]
+section.partners
+  .partners__container.container
+    h3.partners__title Партнёры проектов:
+    .partners__swiper-box
+      button.partners__button-prev.slader-buttons(aria-label="предыдущий слайд")
+        svg(width="32" height="32")
+            use(xlink:href="symbol/svg/sprite.symbol.svg#svg--slader-buttons")
+      .partners__swiper.swiper
+        .partners__list.swiper-wrapper
+          each partner in partners
+            a.partners__item.swiper-slide(href="#" aria-label="Подробнее о партнере")
+              img.partners__item-img(src=partner.url alt="Партнер проекта")
+      button.partners__button-next.slader-buttons(aria-label="следующий слайд")
+        svg(width="32" height="32")
+          use(xlink:href="symbol/svg/sprite.symbol.svg#svg--slader-buttons")

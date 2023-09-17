@@ -1,0 +1,7 @@
+//- -var items = [{title: 'Карра', url: './images/drop-menu/futurizm_1.jpg'}, {title: 'Прателла', url: './images/drop-menu/futurizm_2.jpg'}, {title: 'Северини', url: './images/drop-menu/futurizm_3.jpg'}, {title: 'Балла', url: './images/drop-menu/futurizm_4.jpg'}]
+-var items = [{title: 'Карра', url: './images/drop-menu/futurizm_1.jpg'}]
+.custom-scrol-menu(data-target="five")
+  ul.custom-scrol-menu__list(data-simplebar)
+    each item in items
+      li.custom-scrol-menu__item(style='background-image: url(' + item.url + ');')
+        a.custom-scrol-menu__link #{item.title}

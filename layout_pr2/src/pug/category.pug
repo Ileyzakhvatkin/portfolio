@@ -1,0 +1,59 @@
+-var breadcrumbs = [{title: 'Главная'}, {title: 'Каталог'}, {title: 'Диваны'}, {title: 'Прямые диваны'}]
+-var categories = [{title: 'Категория', id: 'cat-0'}, {title: 'Диваны', id: 'cat-1'}, {title: 'Кресла', id: 'cat-2'}, {title: 'Пуфы', id: 'cat-3'}, {title: 'Кровати', id: 'cat-4'}, {title: 'Тумбы', id: 'cat-5'}, {title: 'Комоды', id: 'cat-6'}, {title: 'Стулья', id: 'cat-7'}, {title: 'Столы', id: 'cat-8'}, {title: 'Аксессуары', id: 'cat-9'}]
+-var prices = [{title: 'Цена', id: 'prace-0'}, {title: 'Цена от 10 000', id: 'prace-1'}, {title: 'Цена от 50 000', id: 'prace-2'}, {title: 'Цена от 100 000', id: 'prace-3'}]
+-var discounts = [{title: 'Скидка', id: 'disc-0'}, {title: 'Более 5 000', id: 'disc-1'}, {title: 'Менее 5 000', id: 'disc-2'}, {title: 'Не важно', id: 'disc-3'}]
+-var colors = [{title: 'Цвет', id: 'col-0'}, {title: 'Коричневый', id: 'col-1'}, {title: 'Черный', id: 'col-2'}, {title: 'Бежевый', id: 'col-3'}, {title: 'Серый', id: 'col-4'}, {title: 'Белый', id: 'col-5'}, {title: 'Синий', id: 'col-6'}, {title: 'Оранжевый', id: 'col-7'}, {title: 'Желтый', id: 'col-8'}, {title: 'Зеленый', id: 'col-9'} ]
+//- -var fproducts = [{rat: '5.0', img: 'images/home/prod-high-1.png', name: 'Диван кожаный “R-94”', price: '94 990'}, {rat: '4.9', img: 'images/home/prod-high-2.png', name: 'Диван апартековый “T-75”', price: '69 990'}, {rat: '4.8', img: 'images/home/prod-high-3.png', name: 'Диван тканевый “D-31”', price: '28 490'}, {rat: '4.8', img: 'images/home/prod-high-4.png', name: 'Диван велюровый “Y-68”', price: '22 990'}, {rat: '4.8', img: 'images/home/prod-high-5.png', name: 'Диван из шинила “W-95”', price: '22 990'}, {rat: '4.8', img: 'images/home/prod-high-6.png', name: 'Диван флоковый “G-41”', price: '17 990'}, {rat: '4.8', img: 'images/home/prod-high-7.png', name: 'Диван шиниловый “V-43”', price: '19 990'}, {rat: '4.7', img: 'images/home/prod-high-8.png', name: 'Диван велюровый “S-99”', price: '19 990'} , {rat: '4.7', img: 'images/home/prod-high-9.png', name: 'Диван из кожзама “F-85”', price: '26 990'}]
+//- -var sproducts = [{rat: '4.6', img: 'images/category/prod-s-1.png', name: 'Диван флоковый “H-64”', price: '25 990'}, {rat: '4.6', img: 'images/category/prod-s-2.png', name: 'Диван флоковый “H-58”', price: '23 990'}, {rat: '4.6', img: 'images/category/prod-s-3.png', name: 'Диван из кожзама “R-43”', price: '33 990'}, {rat: '4.6', img: 'images/category/prod-s-4.png', name: 'Диван из шинила “С-42”', price: '18 990'}, {rat: '4.5', img: 'images/category/prod-s-5.png', name: 'Диван велюровый “U-58”', price: '21 990'}, {rat: '4.5', img: 'images/category/prod-s-6.png', name: 'Диван флоковый “F-41”', price: '17 990'}, {rat: '4.5', img: 'images/category/prod-s-7.png', name: 'Диван велюровый “R-85”', price: '34 990'}, {rat: '4.5', img: 'images/category/prod-s-8.png', name: 'Диван велюровый “S-44”', price: '19 990'} , {rat: '4.4', img: 'images/category/prod-s-9.png', name: 'Диван из шинила “С-80”', price: '20 990'}]
+-var products = [{rat: '5.0', img: 'images/home/prod-high-1.png', name: 'Диван кожаный “R-94”', price: '94 990'}, {rat: '4.9', img: 'images/home/prod-high-2.png', name: 'Диван апартековый “T-75”', price: '69 990'}, {rat: '4.8', img: 'images/home/prod-high-3.png', name: 'Диван тканевый “D-31”', price: '28 490'}, {rat: '4.8', img: 'images/home/prod-high-4.png', name: 'Диван велюровый “Y-68”', price: '22 990'}, {rat: '4.8', img: 'images/home/prod-high-5.png', name: 'Диван из шинила “W-95”', price: '22 990'}, {rat: '4.8', img: 'images/home/prod-high-6.png', name: 'Диван флоковый “G-41”', price: '17 990'}, {rat: '4.8', img: 'images/home/prod-high-7.png', name: 'Диван шиниловый “V-43”', price: '19 990'}, {rat: '4.7', img: 'images/home/prod-high-8.png', name: 'Диван велюровый “S-99”', price: '19 990'} , {rat: '4.7', img: 'images/home/prod-high-9.png', name: 'Диван из кожзама “F-85”', price: '26 990'}, {rat: '4.6', img: 'images/category/prod-s-1.png', name: 'Диван флоковый “H-64”', price: '25 990'}, {rat: '4.6', img: 'images/category/prod-s-2.png', name: 'Диван флоковый “H-58”', price: '23 990'}, {rat: '4.6', img: 'images/category/prod-s-3.png', name: 'Диван из кожзама “R-43”', price: '33 990'}, {rat: '4.6', img: 'images/category/prod-s-4.png', name: 'Диван из шинила “С-42”', price: '18 990'}, {rat: '4.5', img: 'images/category/prod-s-5.png', name: 'Диван велюровый “U-58”', price: '21 990'}, {rat: '4.5', img: 'images/category/prod-s-6.png', name: 'Диван флоковый “F-41”', price: '17 990'}, {rat: '4.5', img: 'images/category/prod-s-7.png', name: 'Диван велюровый “R-85”', price: '34 990'}, {rat: '4.5', img: 'images/category/prod-s-8.png', name: 'Диван велюровый “S-44”', price: '19 990'} , {rat: '4.4', img: 'images/category/prod-s-9.png', name: 'Диван из шинила “С-80”', price: '20 990'}]
+main.main
+  section.catalog
+    .catalog__container.container
+      .catalog__breadcrumbs.breadcrumbs
+        each breadcrumb in breadcrumbs
+          a.breadcrumbs__link(href="#") #{breadcrumb.title}
+      .catalog__sections
+        .catalog__cell
+          .filters
+            h3.filters__title Фильтровать по:
+            h3.filters__name Категория
+            .filters__chek-group(id="categoryGrope")
+            h3.filters__name Цена
+            .filters__custom-range.price-range
+              .price-range__input-box
+                span.price-range__span от
+                  input.price-range__input(type="number" min=0 max="140000" oninput="validity.valid||(value='0');" id="min_price")
+                span.price-range__span до
+                  input.price-range__input(type="number" min=0 max="150000" oninput="validity.valid||(value='150000');" id="max_price")
+              .price-range__filter(id="slider-range")
+            h3.filters__name Скидка
+            .filters__chek-group(id="discountGrope")
+            h3.filters__name Цвет
+            .filters__chek-group(id="colorGrope")
+            .catalog__banner
+              img.catalog__banner-img(src="images/banner-cat.jpg" alt="Баннер в категории")
+              .catalog__banner-title Оксфорд 1950
+              .catalog__banner-desc Новая коллекция изысканных кресел
+              .catalog__banner-btn-box.custom-link
+                a.custom-link(href="./category.html") В каталог
+                svg.custom-link__icon(width="22" height="22")
+                  use(xlink:href="symbol/svg/sprite.symbol.svg#svg--arrow")
+        .catalog__cell
+          .products
+            h2.products__title.section-title Каталог
+            .filters-mob
+              .filters-mob__title Фильтры:
+              .filters-mob__group
+                select.filters-mob__select.select-filter
+                  each category in categories
+                    option(value="#{category.title}") #{category.title}
+                select.filters-mob__select.select-filter
+                  each price in prices
+                    option(value="#{price.title}") #{price.title}
+                select.filters-mob__select.select-filter
+                  each discount in discounts
+                    option(value="#{discount.title}") #{discount.title}
+                select.filters-mob__select.select-filter
+                  each color in colors
+                    option(value="#{color.title}") #{color.title}
+            .products__slader

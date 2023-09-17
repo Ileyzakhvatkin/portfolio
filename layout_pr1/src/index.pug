@@ -1,0 +1,23 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="icon" type="image/svg+xml" href="./images/favicon.svg")
+    title Blanchard
+    meta(name="description" content="Прикоснитесь к прекрасному")
+    include pug/head.pug
+  body.body
+    include pug/header.pug
+    main.main
+      include pug/about.pug
+      include pug/gallery.pug
+      include pug/catalog.pug
+      include pug/events.pug
+      include pug/projects.pug
+      include pug/partners.pug
+      include pug/contacts.pug
+      include pug/yamap.pug
+    include pug/footer.pug
+    include pug/modal.pug

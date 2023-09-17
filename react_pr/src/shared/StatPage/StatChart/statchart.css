@@ -1,0 +1,5 @@
+.chart {
+  height: auto;
+  padding: 25px 25px 0 25px;
+  background-color: var(--greyF4);
+}

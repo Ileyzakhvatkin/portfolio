@@ -1,0 +1,34 @@
+-var fmenus = [{item: 'О компании'}, {item: 'Блог'}]
+-var smenus = [{item: 'Доставка'}, {item: 'Рассрочка и кредит'}, {item: 'Сборка и установка'}]
+-var thmenus = [{item: 'Обратная связь'}, {item: 'Контакты'}]
+-var fmenus = [{item: 'Поставщикам'}, {item: 'Оптовикам'}, {item: 'Карьера'}]
+footer.footer
+  .footer__main
+    .footer__container.container
+      .footer__logo-box
+        include logo.pug
+        include social.pug
+      ul.footer__menus
+        li.footer__menu-title О нас
+          ul.footer__menu.menu
+            each fmenu in fmenus
+              li.footer__menu-item.menu__item
+                a.footer__menu-link.menu__link.link(href="./") #{fmenu.item}
+        li.footer__menu-title Услуги
+          ul.footer__menu.menu
+            each smenu in smenus
+              li.footer__menu-item.menu__item
+                a.footer__menu-link.menu__link.link(href="./") #{smenu.item}
+        li.footer__menu-title Связь с нами
+          ul.footer__menu.menu
+            each thmenu in thmenus
+              li.footer__menu-item.menu__item
+                a.footer__menu-link.menu__link.link(href="./") #{thmenu.item}
+        li.footer__menu-title Сотрудничество
+          ul.footer__menu.menu
+            each fmenu in fmenus
+              li.footer__menu-item.menu__item
+                a.footer__menu-link.menu__link.link(href="./") #{fmenu.item}
+  .footer__copy-right
+    .footer__copy-right-container.container SDP® 2011-2022
+

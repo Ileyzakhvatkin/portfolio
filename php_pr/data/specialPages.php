@@ -1,0 +1,2 @@
+<?php
+$specialPages = ['/novelty/', '/sale/'];

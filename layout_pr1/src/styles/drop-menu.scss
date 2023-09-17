@@ -1,0 +1,198 @@
+@import '_variabels.scss';
+@import '_mixin.scss';
+
+.drop-menu {
+  background-color: $blackOp05;
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 70px;
+  }
+  &__menu {
+    @include clearListStyles;
+    flex: 1 1 85%;
+    display: flex;
+    flex-wrap: wrap;
+    // justify-content: space-between;
+    transform: translateX(-5px);
+  }
+  &__menu-item {
+    position: relative;
+    &:not(:last-child) {
+      margin-right: 85px;
+    }
+  }
+  &__menu-btn {
+    display: flex;
+    align-items: center;
+    padding: 2px 6px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    color: $white;
+    font-size: 18px;
+    transition: color 0.5s, background-color 0.5s;
+    cursor: pointer;
+    &:hover:not(:active):not(:focus) {
+      color: $violet1;
+    }
+    &:focus:not(:active):not(:hover) {
+      background-color: $violet1;
+    }
+    &:active {
+      color: $violet0;
+    }
+    &:hover .drop-menu__menu-icon {
+      stroke: $violet1;
+    }
+    &:active .drop-menu__menu-icon {
+      stroke: $violet0;
+      transform: rotate(-180deg);
+    }
+  }
+  &__menu-span {
+    margin-right: 3px;
+  }
+  &__menu-icon {
+    stroke: $white;
+    transition: transform 0.5s;
+  }
+  &__search {
+    flex: 1 1 15%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+    transform: translateX(-5px);
+  }
+  &__search-icon {
+    margin-right: 6px;
+  }
+  &__search-input {
+    border: none;
+    border-bottom: 1px solid $white;
+    background: none;
+    outline: none;
+    color: $white;
+    font-size: 18px;
+    &::placeholder {
+      color: $white;
+    }
+    &:hover,
+    &:focus {
+      border-bottom-color: $violet1;
+    }
+  }
+}
+.menu-btn-active {
+  background: none !important;
+  color: $violet0  !important;
+  & .drop-menu__menu-icon {
+    stroke: $violet0;
+    transform: rotate(-180deg);
+  }
+}
+
+/*Стили выпадающего меню и Скрола*/
+.custom-scrol-menu {
+  position: absolute;
+  top: 47px;
+  left: 0;
+  width: 300px;
+  padding: 40px 20px 40px 40px;
+  background-color: $blackOp05;
+  transform: scaleY(0%);
+  transform-origin: left top;
+  transition: transform 0.5s;
+  &__list {
+    @include clearListStyles;
+    max-height: 220px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  &__item {
+    position: relative;
+    margin-right: 20px;
+    height: 40px;
+    color: $white;
+    font-weight: 500;
+    line-height: 1.36;
+    cursor: pointer;
+    transition: opacity 0.5s, color 0.5s;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-left: 14px;
+    padding-right: 14px;
+    background-color: transparent;
+    border: 2px solid transparent;
+    transition: border-color 0.5s, background-color 0.5s;
+    &:hover:not(:focus):not(:active),
+    &:focus:not(:hover):not(:active) {
+      border-color: $violet0;
+    }
+    &:active {
+      border-color: rgba(194, 131, 243, 0.4);
+      background-color: rgba(194, 131, 243, 0.4);
+    }
+  }
+  &__list .simplebar-scrollbar {
+    width: 2px;
+    height: 28px !important;
+    background-color: $white;
+    border-radius: 0;
+    opacity: 1;
+  }
+  &__list .simplebar-scrollbar::before {
+    width: 2px;
+    height: 28px;
+    opacity: 0;
+  }
+  & .simplebar-track.simplebar-vertical {
+    width: 2px;
+    background-color: $black00;
+    opacity: 1;
+  }
+}
+.custom-scrol-active {
+  transform: scaleY(1);
+  // transform: scaleY(100%);
+}
+
+@media (max-width: 1360px) {
+  .drop-menu {
+    &__menu-item {
+      &:not(:last-child) {
+        margin-right: 35px;
+      }
+    }
+  }
+}
+@media (max-width: 1260px) {
+  .drop-menu {
+    &__menu-item {
+      &:not(:last-child) {
+        margin-right: 5px;
+      }
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .drop-menu {
+    display: none;
+  }
+}
+@media (max-width: 768px) {}
+@media (max-width: 580px) {}
+

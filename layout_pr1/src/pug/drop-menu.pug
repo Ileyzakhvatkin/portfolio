@@ -1,0 +1,39 @@
+-var hmenus = [{item: 'Реализм', path: 'one', box: '1'}, {item: 'Импрессионизм', path: 'two', box: '2'}, {item: 'Постимпрессионизм', path: 'three', box: '3'}, {item: 'Авангард', path: 'four', box: '4'}, {item: 'Футуризм', path: 'five', box: '5'}]
+.drop-menu
+  .drop-menu__container.container
+    ul.drop-menu__menu
+      li.drop-menu__menu-item
+        button.drop-menu__menu-btn(data-path="one")
+          span.drop-menu__menu-span Реализм
+          svg.drop-menu__menu-icon(width="12" height="7")
+            use(xlink:href="symbol/svg/sprite.symbol.svg#svg--select-arrow")
+        include drop/drop-box-1.pug
+      li.drop-menu__menu-item
+        button.drop-menu__menu-btn(data-path="two")
+          span.drop-menu__menu-span Импрессионизм
+          svg.drop-menu__menu-icon(width="12" height="7")
+            use(xlink:href="symbol/svg/sprite.symbol.svg#svg--select-arrow")
+        include drop/drop-box-2.pug
+      li.drop-menu__menu-item
+        button.drop-menu__menu-btn(data-path="three")
+          span.drop-menu__menu-span Постимпрессионизм
+          svg.drop-menu__menu-icon(width="12" height="7")
+            use(xlink:href="symbol/svg/sprite.symbol.svg#svg--select-arrow")
+        include drop/drop-box-3.pug
+      li.drop-menu__menu-item
+        button.drop-menu__menu-btn(data-path="four")
+          span.drop-menu__menu-span Авангард
+          svg.drop-menu__menu-icon(width="12" height="7")
+            use(xlink:href="symbol/svg/sprite.symbol.svg#svg--select-arrow")
+        include drop/drop-box-4.pug
+      li.drop-menu__menu-item
+        button.drop-menu__menu-btn(data-path="five")
+          span.drop-menu__menu-span Футуризм
+          svg.drop-menu__menu-icon(width="12" height="7")
+            use(xlink:href="symbol/svg/sprite.symbol.svg#svg--select-arrow")
+        include drop/drop-box-5.pug
+    form.drop-menu__search
+      svg.drop-menu__search-icon(width="22" height="22")
+        use(xlink:href="symbol/svg/sprite.symbol.svg#svg--search")
+      label.drop-menu__search-lable(for="search")
+        input.drop-menu__search-input(type="text" placeholder="Поиск по сайту" name="search" id="search" aria-label="Поиск по сайту")

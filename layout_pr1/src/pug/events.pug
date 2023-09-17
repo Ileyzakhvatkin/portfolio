@@ -1,0 +1,77 @@
+section.events(id="events")
+  .events__container.container
+    h2.events__title.section-title События
+    .events__swiper.swiper
+      button.events__button-prev.slader-buttons(aria-label="предыдущий слайд")
+        svg(width="50" height="50")
+          use(xlink:href="symbol/svg/sprite.symbol.svg#svg--slader-buttons")
+      button.events__button-next.slader-buttons(aria-label="следующий слайд")
+        svg(width="50" height="50")
+          use(xlink:href="symbol/svg/sprite.symbol.svg#svg--slader-buttons")
+      .events__list.swiper-wrapper
+        .events__item.swiper-slide
+          picture.events__pict
+            source.events__sourse(srcset="./images/events/event_1.jpg" media="(min-width: 1025px)")
+            source.events__sourse(srcset="./images/events/event_1_1024.jpg" media="(min-width: 769px)")
+            source.events__sourse(srcset="./images/events/event_1_768.jpg" media="(min-width: 581px)")
+            source.events__sourse(srcset="./images/events/event_1_320.jpg" media="(min-width: 200px)")
+            img.events__img(src="./images/events/event_1.jpg" alt="Книжная гравюра")
+          div.events__owner Музей им. Щусева
+          div.events__data с 20 марта по 30 апреля
+          h3.events__item-title Книжная гравюра в живом восприятии
+          p.events__desc Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и сын Ридольфо
+          a.events__more.link(href="#" aria-label="Подробнее о событии")
+            span Подробнее
+        .events__item.swiper-slide
+          picture.events__pict
+            source.events__sourse(srcset="./images/events/event_2.jpg" media="(min-width: 1025px)")
+            source.events__sourse(srcset="./images/events/event_2_1024.jpg" media="(min-width: 769px)")
+            source.events__sourse(srcset="./images/events/event_2_768.jpg" media="(min-width: 581px)")
+            source.events__sourse(srcset="./images/events/event_2_320.jpg" media="(min-width: 200px)")
+            img.events__img(src="./images/events/event_2.jpg" alt="Открытая дискуссия")
+          div.events__owner ММОМА
+          div.events__data 24 марта 19:00
+          h3.events__item-title «Открытая дискуссия». Дмитрий Петров и Сергей Ильин.
+          p.events__desc Высокий уровень вовлечения представителей целевой аудитории является чётким доказательством простого факта
+          a.events__more.link(href="#" aria-label="Подробнее о событии")
+            span Подробнее
+        .events__item.swiper-slide
+          picture.events__pict
+            source.events__sourse(srcset="./images/events/event_3.jpg" media="(min-width: 1025px)")
+            source.events__sourse(srcset="./images/events/event_3_1024.jpg" media="(min-width: 769px)")
+            source.events__sourse(srcset="./images/events/event_3_768.jpg" media="(min-width: 581px)")
+            source.events__sourse(srcset="./images/events/event_3_320.jpg" media="(min-width: 200px)")
+            img.events__img(src="./images/events/event_3.jpg" alt="Формация 2020")
+          div.events__owner Еврейский музей
+          div.events__data с 31 марта по 21 апреля
+          h3.events__item-title Выставка «Формация 2020»
+          p.events__desc Идейные соображения высшего порядка, а также современная методология разработки играет важную роль в формировании глубокомысленных рассуждений
+          a.events__more.link(href="#" aria-label="Подробнее о событии")
+            span Подробнее
+        .events__item.swiper-slide
+          picture.events__pict
+            source.events__sourse(srcset="./images/events/event_4.jpg" media="(min-width: 1025px)")
+            source.events__sourse(srcset="./images/events/event_4_1024.jpg" media="(min-width: 769px)")
+            source.events__sourse(srcset="./images/events/event_4_768.jpg" media="(min-width: 581px)")
+            source.events__sourse(srcset="./images/events/event_4_320.jpg" media="(min-width: 200px)")
+            img.events__img(src="./images/events/event_4.jpg" alt="Метафора")
+          div.events__owner ММАМ
+          div.events__data с 8 апреля по 20 мая
+          h3.events__item-title Джон Винзор. Фотографии из серии «Метафора»
+          p.events__desc Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и сын Ридольфо
+          a.events__more.link(href="#" aria-label="Подробнее о событии")
+            span Подробнее
+        .events__item.swiper-slide
+          picture.events__pict
+            source.events__sourse(srcset="./images/events/event_5.jpg" media="(min-width: 1025px)")
+            source.events__sourse(srcset="./images/events/event_5_1024.jpg" media="(min-width: 769px)")
+            source.events__sourse(srcset="./images/events/event_5_768.jpg" media="(min-width: 581px)")
+            source.events__sourse(srcset="./images/events/event_5_320.jpg" media="(min-width: 200px)")
+            img.events__img(src="./images/events/event_5.jpg" alt="Международная биеннале")
+          div.events__owner Третьяковка на Крымском валу
+          div.events__data с 30 марта по 30 апреля
+          h3.events__item-title XXIV Международная биеннале молодого искусства
+          p.events__desc Внезапно, реплицированные с зарубежных источников, современные исследования
+          a.events__more.link(href="#" aria-label="Подробнее о событии")
+            span Подробнее
+      .events__pagination

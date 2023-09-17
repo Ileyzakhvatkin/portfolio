@@ -1,0 +1,22 @@
+.timer {
+  flex: 1 1 51%;
+  max-width: 51%;
+}
+
+.timerBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 520px;
+  background-color: var(--greyF4);
+}
+
+.notTasks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+  font-size: 24px;
+  color: var(--red);
+}

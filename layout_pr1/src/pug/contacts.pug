@@ -1,0 +1,27 @@
+section.contacts(id="contacts")
+  .contacts__container.container
+    .contacts__title-block
+      h3.contacts__title Шоурум №4
+      .contacts__desc Леонтьевский переулок, дом 5/1
+    form.contacts__form(id="callform")
+      input(type="hidden" name="admin_email[]" value="iley.zakhvatkin@gmail.com")
+      input(type="hidden" name="form_subject" value="Обратный звонок")
+      label.contacts__lable(for="username")
+        input.contacts__input(type="text" placeholder="Имя*" data-validate-field="username" id="username" name="username")
+      label.contacts__lable(for="userphone" )
+        input.contacts__input(type="tel" placeholder="Телефон*" data-validate-field="userphone" id="userphone" name="userphone")
+      .contacts__submit-box
+        button.contacts__submit.btn.btn-inner(type="submit" tabindex="0" aria-label="отправить сообщение")
+          span Заказать #[span.contacts__submit-none обратный звонок]
+      .contacts__submit-massage Сообщение отправлено!
+    .contacts__social
+      h3.contacts__social-title Связаться в один клик
+      ul.contacts__social-list
+        li.contacts__social-item
+          a.contacts__social-link(href="#" aria-label="на нашу группу в whatsapp")
+            svg.contacts__social-icon
+              use(xlink:href="symbol/svg/sprite.symbol.svg#svg--whatsapp")
+        li.contacts__social-item
+          a.contacts__social-link(href="#" aria-label="на наш канал в Телеграм")
+            svg.contacts__social-icon
+              use(xlink:href="symbol/svg/sprite.symbol.svg#svg--telegram")

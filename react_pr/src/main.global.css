@@ -1,0 +1,206 @@
+@font-face {
+  font-family: 'SF UI Display';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100;
+  src: local('sf-ui-display'), local('SF UI Display'),
+        url('./fonts/sf-ui-display-thin.woff2') format('woff2'),
+        url('./fonts/sf-ui-display-thin.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF UI Display';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: local('sf-ui-display'), local('SF UI Display'),
+        url('./fonts/sf-ui-display-light.woff2') format('woff2'),
+        url('./fonts/sf-ui-display-light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF UI Display';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: local('sf-ui-display'), local('SF UI Display'),
+        url('./fonts/sf-ui-display-regular.woff2') format('woff2'),
+        url('./fonts/sf-ui-display-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF UI Display';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: local('sf-ui-display'), local('SF UI Display'),
+        url('./fonts/sf-ui-display-medium.woff2') format('woff2'),
+        url('./fonts/sf-ui-display-medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF UI Display';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: local('sf-ui-display'), local('SF UI Display'),
+        url('./fonts/sf-ui-display-bold.woff2') format('woff2'),
+        url('./fonts/sf-ui-display-bold.woff') format('woff');
+}
+
+:root {
+  --black:          #333333;
+  --red:            #DC3E22;
+  --reddark:        #B7280F;
+  --green:          #899441;
+  --greenlight:     #A8B64F;
+  --grey99:         #999999;
+  --greyC4:         #C4C4C4;
+  --greyDE:         #dedede;
+  --greyE4:         #E4E4E4;
+  --greyF4:         #F4F4F4;
+  --white:          #ffffff;
+  --orange:         #FFAE35;
+  --orangelight:    #FFDDA9;
+  --violet:         #9C97D7;
+  --violetlight:    #DFDCFE;
+  --blue:           #7FC2D7;
+  --bluelight:      #C5F1FF;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'SF UI Display', serif;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+input {
+  padding: 19px 15px;
+  background-color: var(--greyF4);
+  outline: none;
+  border: none;
+  font-size: 16px;
+}
+
+#react_root {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.whiteTmpl {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.blaskTmpl {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.blaskTmpl button,
+.blaskTmpl .title,
+.blaskTmpl .statistics .title,
+.blaskTmpl .list span {
+  color: var(--white);
+}
+
+.blaskTmpl .header,
+.blaskTmpl .footer {
+  background-color: var(--greyC4);
+}
+
+.blaskTmpl .timerColor {
+  color: var(--red);
+}
+
+.blaskTmpl .statistics,
+.blaskTmpl .statSelect button {
+  color: var(--black);
+}
+
+.blaskTmpl .footer button {
+  color: var(--red);
+}
+
+.blaskTmpl .menuBtn {
+  color: var(--black);
+}
+
+.btn {
+  padding: 15px 50px;
+  border: 2px solid var(--greenlight);
+  transition: background-color 0.5s cubic-bezier(0,.42,.16,.97), color 0.5s cubic-bezier(0,.42,.16,.97), border-color 0.5s cubic-bezier(0,.42,.16,.97);
+}
+
+.btn:disabled {
+  background: none !important;
+  border-color: var(--greyC4) !important;
+  color: var(--greyC4) !important;
+  cursor: default;
+}
+
+.btnGreen {
+  background-color: var(--greenlight);
+  border-color: var(--greenlight);
+  color: var(--white);
+}
+
+.btnGreen:hover,
+.btnGreen:active {
+  background-color: var(--green);
+  border-color: var(--green);
+}
+
+.btnRed {
+  background: none;
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.btnRed:hover,
+.btnRed:active {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.modalBtnBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalBtnBox > button:not(:last-child) {
+  margin-bottom: 18px;
+}
+

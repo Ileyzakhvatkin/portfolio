@@ -1,0 +1,20 @@
+.tasksList {
+  width: 65%;
+  margin-bottom: 19px;
+}
+
+.task {
+  cursor: grab;
+}
+
+.taskOver {
+  background-color: var(--greyF4);
+}
+
+.taskMove {
+  background-color: var(--greenlight);
+}
+
+.leftBarTasksTime {
+  color: var(--grey99);
+}

@@ -1,0 +1,30 @@
+@import '_variabels.scss';
+@import '_mixin.scss';
+
+.yamap {
+  height: 700px;
+  margin-bottom: 0;
+  & [class*="ground-pane"] {
+    filter: grayscale(0.99);
+  }
+  &__title {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .yamap {
+    height: 696px;
+  }
+}
+@media (max-width: 768px) {
+  .yamap {
+    height: 698px;
+  }
+}
+@media (max-width: 580px) {
+  .yamap {
+    height: 291px;
+  }
+}
+

@@ -1,0 +1,124 @@
+@import '_variabels.scss';
+@import '_mixin.scss';
+
+.modal {
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 100;
+  opacity: 0;
+  transition: opacity 1s;
+  // overflow-y: scroll;
+  &__show {
+    display: block;
+  }
+  &__opacity {
+    opacity: 1;
+  }
+  &__body {
+    max-height: 80vh;
+    max-width: 900px;
+    background-color: $white;
+    margin: 10vh auto;
+    box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.8);
+  }
+  &__box {
+    display: flex;
+    position: relative;
+  }
+  &__close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    --modal-x: #000000;
+    &:hover,
+    &:focus {
+      --modal-x: #9D5CD0;
+    }
+    &:active {
+      --modal-x: #9D5CD0;
+    }
+  }
+  &__pict {
+    flex: 1 1 400px;
+    display: flex;
+    width: 400px;
+  }
+  &__img,
+  &__sours {
+      width: 100%;
+      height: auto;
+  }
+  &__cont {
+    flex: 1 1 499px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  &__title {
+    margin-bottom: 5px;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  &__name {
+    margin-bottom: 2px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  &__data {
+    margin-bottom: 39px;
+    font-size: 12px;
+    color: $grey99;
+  }
+  &__text {
+    line-height: 22px;
+    text-align: left;
+  }
+  &__list .simplebar-scrollbar {
+    width: 2px;
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .modal {
+    &__body {
+      max-width: 600px;
+    }
+    &__pict {
+      flex: 1 1 301px;
+      width: 301px;
+    }
+  }
+}
+@media (max-width: 768px) {
+
+}
+@media (max-width: 580px) {
+  .modal {
+    &__body {
+      margin: 10vh 15px;
+    }
+    &__box {
+      display: block;
+    }
+    &__pict {
+      width: 100%;
+    }
+    &__cont {
+      padding: 18px 18px 72px 18px;
+    }
+    &__data {
+      margin-bottom: 12px;
+    }
+  }
+}

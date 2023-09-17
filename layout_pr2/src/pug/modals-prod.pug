@@ -1,0 +1,24 @@
+-var primgs = [{img: 'images/product/prod-main-0.png'}, {img: 'images/product/prod-main-1.png'}, {img: 'images/product/prod-main-2.png'}, {img: 'images/product/prod-main-3.png'}, {img: 'images/product/prod-main-4.png'}]
+-var thumbs = [{img: 'images/product/product-m-0.png'}, {img: 'images/product/product-m-1.png'}, {img: 'images/product/product-m-2.png'}, {img: 'images/product/product-m-3.png'}, {img: 'images/product/product-m-4.png'}]
+.modal(id="prod-img-group")
+  .modal__body
+    button.modal__close-btn
+      svg.modal__close(width="20" height="20")
+        use(xlink:href="symbol/svg/sprite.symbol.svg#svg--x")
+    .modal__images-group.product-images
+      .swiper.swiperProduct2.product-images__main
+        .swiper-wrapper.product-images__main-list
+          each primg in primgs
+            .swiper-slide.product-images__main-item
+              img.product-images__main-img.lazyload(data-src=primg.img alt="")
+      .swiper.swiperProduct1.product-images__thumbs.slader-buttons
+        .swiper-wrapper.product-images__thumbs-list
+          each thumb in thumbs
+            .swiper-slide.product-images__thumbs-item
+              img.product-images__thumbs-img.lazyload(data-src=thumb.img alt="")
+        button.product-images__thumbs-next.slader-buttons__button
+          svg.product-images__button-prev.slader-buttons__prev(width="32" height="32")
+            use(xlink:href="symbol/svg/sprite.symbol.svg#svg--arrow")
+        butto.product-images__thumbs-prev.slader-buttons__button
+          svg.product-images__button-next.slader-buttons__next(width="32" height="32")
+            use(xlink:href="symbol/svg/sprite.symbol.svg#svg--arrow")

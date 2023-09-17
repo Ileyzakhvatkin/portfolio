@@ -1,0 +1,47 @@
+@import '_variabels.scss';
+@import '_mixin.scss';
+
+.projects {
+  padding-top: 40px;
+  &__desc {
+    max-width: 1080px;
+    margin-bottom: 23px;
+    line-height: 32px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .projects {
+    &__container {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+    &__desc {
+      margin-bottom: 22px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .projects {
+    &__desc {
+      margin-bottom: 30px;
+    }
+  }
+}
+@media (max-width: 580px) {
+  .projects {
+    padding-top: 10px;
+    padding-bottom: 26px;
+    &__container {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    &__title {
+      margin-bottom: 0;
+    }
+    &__desc {
+      margin-bottom: 0;
+      font-size: 16px;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.statistica {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+}
+
+.statistica:hover .statisticaTitle,
+.statistica:focus .statisticaTitle {
+  color: var(--reddark);
+}
+
+.statistica:first-child {
+  margin-right: 5px;
+}
+
+.statistica path {
+  margin-right: 5px;
+  fill: var(--red);
+}
+
+.statistica:hover path,
+.statistica:focus path {
+  fill:  var(--reddark);
+}
+
+.statisticaTitle {
+  font-size: 16px;
+  line-height: 17px;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--red);
+  transform: color 0.5s cubic-bezier(0,.42,.16,.97);
+}
