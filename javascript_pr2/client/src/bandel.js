@@ -1,9 +1,8 @@
 import 'babel-polyfill';
 import { el, setChildren } from 'redom';
 import './styles/styles.scss';
+import favicon from './assets/images/favicon.svg';
 import Navigo from 'navigo';
-const router = new Navigo('/');
-
 import { header, headerUnlogin, exitButton } from './js/render-header.js';
 import { getAllCurrencyCode } from './js/api-server.js';
 import { loginApp, exitApp } from './js/render-login.js';
@@ -11,8 +10,8 @@ import { createAccoutsList } from './js/render-list.js';
 import { createAccoutsDatails } from './js/render-account.js';
 import { createAccoutsHistory } from './js/render-history.js';
 import { createCurrencyPage } from './js/render-currency.js';
-import favicon from './assets/images/favicon.svg';
 
+const router = new Navigo('/');
 export const body = window.document.body;
 export const main = el('main.main');
 
