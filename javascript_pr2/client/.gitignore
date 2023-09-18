@@ -3,3 +3,4 @@
 node_modules
 /dist
 my_links.md
+package-lock.json
