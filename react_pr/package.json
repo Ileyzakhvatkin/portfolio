@@ -10,7 +10,8 @@
     "build:dev": "cross-env NODE_ENV=development webpack --config webpack.config.js",
     "build:prod": "cross-env NODE_ENV=production webpack --config webpack.config.js",
     "dev": "cross-env NODE_ENV=development node ./bin/dev.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./dist/server/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -33,6 +34,7 @@
   },
   "devDependencies": {
     "@hot-loader/react-dom": "^17.0.1",
+    "@types/classnames": "^2.3.1",
     "@types/react": "17.0.0",
     "@types/react-dom": "^18.0.6",
     "@typescript-eslint/eslint-plugin": "^6.1.0",
