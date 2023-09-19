@@ -47,13 +47,21 @@ app.get('/dashboard', mwAuth(), (req, res) => {
 });
 
 app.get('/page-pdf/:id', async (req, res) => {
-  const converter = new showdown.Converter();
-  const { title, html } = await getNoteById(Number(req.params.id));
-  res.render('pdf', { title, html: converter.makeHtml(html) });
+  try {
+    const converter = new showdown.Converter();
+    const { title, html } = await getNoteById(Number(req.params.id));
+    res.render('pdf', { title, html: converter.makeHtml(html) });
+  } catch (error) {
+    return res.status(error.status || 500);
+  }
 });
 
 app.get('*', mwAuth(), (req, res) => {
-  req.user ? res.redirect('/dashboard') : res.render('page-404');
+  try {
+    req.user ? res.redirect('/dashboard') : res.render('page-404');
+  } catch (error) {
+    return res.redirect('./');
+  }
 });
 
 const port = process.env.PORT || 3000;

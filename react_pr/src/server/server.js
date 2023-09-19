@@ -1,18 +1,19 @@
-import express from 'express'
-import ReactDOM from 'react-dom/server'
+import express from "express";
+import ReactDOM from "react-dom/server";
 import { App } from '../App';
-import { indexTemplate } from './indexTemplate'
+import { indexTemplate } from "./indexTemplate";
 const app = express();
 
-app.use('/static', express.static('./dist/client'));
-app.get('/', (req, res) => {
-  res.send(indexTemplate(ReactDOM.renderToString(App())));
-});
+app.use("/static", express.static("./dist/client"));
 
-app.get('*', (req, res) => {
-  res.send(indexTemplate(ReactDOM.renderToString(App())));
+app.get('/', (req, res) => {
+  try {
+    res.send(indexTemplate(ReactDOM.renderToString(App())));
+  } catch (error) {
+    return res.status(error.status || 500);
+  }
 });
 
 app.listen(3000, () => {
-  console.log("server started on port http://localhost:3000");
+  console.log("server started on port http://mysite:3000");
 });
