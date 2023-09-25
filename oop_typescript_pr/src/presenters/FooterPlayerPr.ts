@@ -36,7 +36,11 @@ export class FooterPlayerPr {
       playerPlay.style.display = 'none';
       playerNofile.style.display = 'flex';
     }
-    this.pleyStatus ? audioNode.play() : audioNode.pause();
+    this.pleyStatus ? audioNode.play().then(() => {
+        audioNode.pause();
+        audioNode.currentTime = 0;
+        audioNode.play();
+    }) : audioNode.pause();
     const volumeBox: HTMLDivElement = footer.querySelector('.player__value-range');
     const volumeBar: HTMLDivElement = footer.querySelector('.player__valume');
     audioNode.volume = this.voluneLavel;
@@ -94,7 +98,11 @@ export class FooterPlayerPr {
     }
 
     const playTrack = () => {
-      !this.pleyStatus ? audioNode.play() : audioNode.pause();
+      !this.pleyStatus ? audioNode.play().then(() => {
+          audioNode.pause();
+          audioNode.currentTime = 0;
+          audioNode.play();
+      }) : audioNode.pause();
       this.pleyStatus = !this.pleyStatus;
       this.pleyStatus ? btnPlay.classList.add('active') : btnPlay.classList.remove('active');
     }
